@@ -1,0 +1,605 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		228A60712B5F65B1008C2324 /* splitwise_cloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A60702B5F65B1008C2324 /* splitwise_cloneApp.swift */; };
+		228A60732B5F65B1008C2324 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A60722B5F65B1008C2324 /* ContentView.swift */; };
+		228A60752B5F65B1008C2324 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A60742B5F65B1008C2324 /* Item.swift */; };
+		228A60772B5F65B3008C2324 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 228A60762B5F65B3008C2324 /* Assets.xcassets */; };
+		228A607A2B5F65B3008C2324 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 228A60792B5F65B3008C2324 /* Preview Assets.xcassets */; };
+		228A60862B5F65B3008C2324 /* splitwise_cloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A60852B5F65B3008C2324 /* splitwise_cloneTests.swift */; };
+		228A60902B5F65B3008C2324 /* splitwise_cloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A608F2B5F65B3008C2324 /* splitwise_cloneUITests.swift */; };
+		228A60922B5F65B3008C2324 /* splitwise_cloneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A60912B5F65B3008C2324 /* splitwise_cloneUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		228A60822B5F65B3008C2324 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 228A60652B5F65B1008C2324 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 228A606C2B5F65B1008C2324;
+			remoteInfo = "splitwise-clone";
+		};
+		228A608C2B5F65B3008C2324 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 228A60652B5F65B1008C2324 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 228A606C2B5F65B1008C2324;
+			remoteInfo = "splitwise-clone";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		228A606D2B5F65B1008C2324 /* splitwise-clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "splitwise-clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		228A60702B5F65B1008C2324 /* splitwise_cloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = splitwise_cloneApp.swift; sourceTree = "<group>"; };
+		228A60722B5F65B1008C2324 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		228A60742B5F65B1008C2324 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		228A60762B5F65B3008C2324 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		228A60792B5F65B3008C2324 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		228A607B2B5F65B3008C2324 /* splitwise_clone.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = splitwise_clone.entitlements; sourceTree = "<group>"; };
+		228A607C2B5F65B3008C2324 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		228A60812B5F65B3008C2324 /* splitwise-cloneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "splitwise-cloneTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		228A60852B5F65B3008C2324 /* splitwise_cloneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = splitwise_cloneTests.swift; sourceTree = "<group>"; };
+		228A608B2B5F65B3008C2324 /* splitwise-cloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "splitwise-cloneUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		228A608F2B5F65B3008C2324 /* splitwise_cloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = splitwise_cloneUITests.swift; sourceTree = "<group>"; };
+		228A60912B5F65B3008C2324 /* splitwise_cloneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = splitwise_cloneUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		228A606A2B5F65B1008C2324 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		228A607E2B5F65B3008C2324 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		228A60882B5F65B3008C2324 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		228A60642B5F65B1008C2324 = {
+			isa = PBXGroup;
+			children = (
+				228A606F2B5F65B1008C2324 /* splitwise-clone */,
+				228A60842B5F65B3008C2324 /* splitwise-cloneTests */,
+				228A608E2B5F65B3008C2324 /* splitwise-cloneUITests */,
+				228A606E2B5F65B1008C2324 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		228A606E2B5F65B1008C2324 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				228A606D2B5F65B1008C2324 /* splitwise-clone.app */,
+				228A60812B5F65B3008C2324 /* splitwise-cloneTests.xctest */,
+				228A608B2B5F65B3008C2324 /* splitwise-cloneUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		228A606F2B5F65B1008C2324 /* splitwise-clone */ = {
+			isa = PBXGroup;
+			children = (
+				228A60702B5F65B1008C2324 /* splitwise_cloneApp.swift */,
+				228A60722B5F65B1008C2324 /* ContentView.swift */,
+				228A60742B5F65B1008C2324 /* Item.swift */,
+				228A60762B5F65B3008C2324 /* Assets.xcassets */,
+				228A607B2B5F65B3008C2324 /* splitwise_clone.entitlements */,
+				228A607C2B5F65B3008C2324 /* Info.plist */,
+				228A60782B5F65B3008C2324 /* Preview Content */,
+			);
+			path = "splitwise-clone";
+			sourceTree = "<group>";
+		};
+		228A60782B5F65B3008C2324 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				228A60792B5F65B3008C2324 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		228A60842B5F65B3008C2324 /* splitwise-cloneTests */ = {
+			isa = PBXGroup;
+			children = (
+				228A60852B5F65B3008C2324 /* splitwise_cloneTests.swift */,
+			);
+			path = "splitwise-cloneTests";
+			sourceTree = "<group>";
+		};
+		228A608E2B5F65B3008C2324 /* splitwise-cloneUITests */ = {
+			isa = PBXGroup;
+			children = (
+				228A608F2B5F65B3008C2324 /* splitwise_cloneUITests.swift */,
+				228A60912B5F65B3008C2324 /* splitwise_cloneUITestsLaunchTests.swift */,
+			);
+			path = "splitwise-cloneUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		228A606C2B5F65B1008C2324 /* splitwise-clone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 228A60952B5F65B3008C2324 /* Build configuration list for PBXNativeTarget "splitwise-clone" */;
+			buildPhases = (
+				228A60692B5F65B1008C2324 /* Sources */,
+				228A606A2B5F65B1008C2324 /* Frameworks */,
+				228A606B2B5F65B1008C2324 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "splitwise-clone";
+			productName = "splitwise-clone";
+			productReference = 228A606D2B5F65B1008C2324 /* splitwise-clone.app */;
+			productType = "com.apple.product-type.application";
+		};
+		228A60802B5F65B3008C2324 /* splitwise-cloneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 228A60982B5F65B3008C2324 /* Build configuration list for PBXNativeTarget "splitwise-cloneTests" */;
+			buildPhases = (
+				228A607D2B5F65B3008C2324 /* Sources */,
+				228A607E2B5F65B3008C2324 /* Frameworks */,
+				228A607F2B5F65B3008C2324 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				228A60832B5F65B3008C2324 /* PBXTargetDependency */,
+			);
+			name = "splitwise-cloneTests";
+			productName = "splitwise-cloneTests";
+			productReference = 228A60812B5F65B3008C2324 /* splitwise-cloneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		228A608A2B5F65B3008C2324 /* splitwise-cloneUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 228A609B2B5F65B3008C2324 /* Build configuration list for PBXNativeTarget "splitwise-cloneUITests" */;
+			buildPhases = (
+				228A60872B5F65B3008C2324 /* Sources */,
+				228A60882B5F65B3008C2324 /* Frameworks */,
+				228A60892B5F65B3008C2324 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				228A608D2B5F65B3008C2324 /* PBXTargetDependency */,
+			);
+			name = "splitwise-cloneUITests";
+			productName = "splitwise-cloneUITests";
+			productReference = 228A608B2B5F65B3008C2324 /* splitwise-cloneUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		228A60652B5F65B1008C2324 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					228A606C2B5F65B1008C2324 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					228A60802B5F65B3008C2324 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 228A606C2B5F65B1008C2324;
+					};
+					228A608A2B5F65B3008C2324 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 228A606C2B5F65B1008C2324;
+					};
+				};
+			};
+			buildConfigurationList = 228A60682B5F65B1008C2324 /* Build configuration list for PBXProject "splitwise-clone" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 228A60642B5F65B1008C2324;
+			productRefGroup = 228A606E2B5F65B1008C2324 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				228A606C2B5F65B1008C2324 /* splitwise-clone */,
+				228A60802B5F65B3008C2324 /* splitwise-cloneTests */,
+				228A608A2B5F65B3008C2324 /* splitwise-cloneUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		228A606B2B5F65B1008C2324 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				228A607A2B5F65B3008C2324 /* Preview Assets.xcassets in Resources */,
+				228A60772B5F65B3008C2324 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		228A607F2B5F65B3008C2324 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		228A60892B5F65B3008C2324 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		228A60692B5F65B1008C2324 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				228A60732B5F65B1008C2324 /* ContentView.swift in Sources */,
+				228A60752B5F65B1008C2324 /* Item.swift in Sources */,
+				228A60712B5F65B1008C2324 /* splitwise_cloneApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		228A607D2B5F65B3008C2324 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				228A60862B5F65B3008C2324 /* splitwise_cloneTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		228A60872B5F65B3008C2324 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				228A60902B5F65B3008C2324 /* splitwise_cloneUITests.swift in Sources */,
+				228A60922B5F65B3008C2324 /* splitwise_cloneUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		228A60832B5F65B3008C2324 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 228A606C2B5F65B1008C2324 /* splitwise-clone */;
+			targetProxy = 228A60822B5F65B3008C2324 /* PBXContainerItemProxy */;
+		};
+		228A608D2B5F65B3008C2324 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 228A606C2B5F65B1008C2324 /* splitwise-clone */;
+			targetProxy = 228A608C2B5F65B3008C2324 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		228A60932B5F65B3008C2324 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		228A60942B5F65B3008C2324 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		228A60962B5F65B3008C2324 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "splitwise-clone/splitwise_clone.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"splitwise-clone/Preview Content\"";
+				DEVELOPMENT_TEAM = M8XH5S3MW8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "splitwise-clone/Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "code.splitwise-clone";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		228A60972B5F65B3008C2324 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "splitwise-clone/splitwise_clone.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"splitwise-clone/Preview Content\"";
+				DEVELOPMENT_TEAM = M8XH5S3MW8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "splitwise-clone/Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "code.splitwise-clone";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		228A60992B5F65B3008C2324 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M8XH5S3MW8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "code.splitwise-cloneTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/splitwise-clone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/splitwise-clone";
+			};
+			name = Debug;
+		};
+		228A609A2B5F65B3008C2324 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M8XH5S3MW8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "code.splitwise-cloneTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/splitwise-clone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/splitwise-clone";
+			};
+			name = Release;
+		};
+		228A609C2B5F65B3008C2324 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M8XH5S3MW8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "code.splitwise-cloneUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "splitwise-clone";
+			};
+			name = Debug;
+		};
+		228A609D2B5F65B3008C2324 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M8XH5S3MW8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "code.splitwise-cloneUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "splitwise-clone";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		228A60682B5F65B1008C2324 /* Build configuration list for PBXProject "splitwise-clone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				228A60932B5F65B3008C2324 /* Debug */,
+				228A60942B5F65B3008C2324 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		228A60952B5F65B3008C2324 /* Build configuration list for PBXNativeTarget "splitwise-clone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				228A60962B5F65B3008C2324 /* Debug */,
+				228A60972B5F65B3008C2324 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		228A60982B5F65B3008C2324 /* Build configuration list for PBXNativeTarget "splitwise-cloneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				228A60992B5F65B3008C2324 /* Debug */,
+				228A609A2B5F65B3008C2324 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		228A609B2B5F65B3008C2324 /* Build configuration list for PBXNativeTarget "splitwise-cloneUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				228A609C2B5F65B3008C2324 /* Debug */,
+				228A609D2B5F65B3008C2324 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 228A60652B5F65B1008C2324 /* Project object */;
+}
