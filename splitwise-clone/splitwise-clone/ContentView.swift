@@ -13,6 +13,8 @@ struct ContentView: View {
     @Query private var items: [Item]
 
     var body: some View {
+    
+
         NavigationSplitView {
             List {
                 ForEach(items) { item in
@@ -37,6 +39,7 @@ struct ContentView: View {
         } detail: {
             Text("Select an item")
         }
+        
     }
 
     private func addItem() {
