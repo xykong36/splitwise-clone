@@ -18,8 +18,7 @@ struct Info {
 let information = Info(
     image: "avatar-xy-2",
     name: "Xiangyu Kong",
-    story: "A story can be about anything you can dream up. There are no right answers, there is no one else.\n\nNeed some inspiration?\n• 🐶🐱🛶️🎭🎤🎧🎸\n• 🏄‍♀️🚵‍♀️🚴‍♀️⛵️🥾\n🏂⛷📚\n• ✍️🥖☕️🏋️‍♂️🚲🧗‍♀️ deajdlekajldea\n
-    ",
+    story: "A story can be about anything you can dream up. There are no right answers, there is no one else.\n\nNeed some inspiration?\n• 🐶🐱🛶️🎭🎤🎧🎸\n• 🏄‍♀️🚵‍♀️🚴‍♀️⛵️🥾\n🏂⛷📚\n",
     hobbies: ["bicycle", "ticket.fill", "book.fill"],
     foods: ["🥐", "🌮", "🍣"],
     colors: [Color.blue, Color.purple, Color.pink],
