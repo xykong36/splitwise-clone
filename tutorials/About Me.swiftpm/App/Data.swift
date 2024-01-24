@@ -16,9 +16,10 @@ struct Info {
 }
 
 let information = Info(
-    image: "Placeholder",
-    name: "My Name",
-    story: "A story can be about anything you can dream up. There are no right answers, there is no one else.\n\nNeed some inspiration?\n• 🐶🐱🛶️🎭🎤🎧🎸\n• 🏄‍♀️🚵‍♀️🚴‍♀️⛵️🥾🏂⛷📚\n• ✍️🥖☕️🏋️‍♂️🚲🧗‍♀️ ",
+    image: "avatar-xy-2",
+    name: "Xiangyu Kong",
+    story: "A story can be about anything you can dream up. There are no right answers, there is no one else.\n\nNeed some inspiration?\n• 🐶🐱🛶️🎭🎤🎧🎸\n• 🏄‍♀️🚵‍♀️🚴‍♀️⛵️🥾\n🏂⛷📚\n• ✍️🥖☕️🏋️‍♂️🚲🧗‍♀️ deajdlekajldea\n
+    ",
     hobbies: ["bicycle", "ticket.fill", "book.fill"],
     foods: ["🥐", "🌮", "🍣"],
     colors: [Color.blue, Color.purple, Color.pink],

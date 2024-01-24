@@ -8,16 +8,16 @@ struct HomeView: View {
     
     var body: some View {
         VStack {
-            Text("All About")
-                .font(.largeTitle)
-                .fontWeight(.bold)
+            Text("My first ios app")
+                .font(.title2)
+                .fontWeight(.heavy)
                 .padding()
 
             Image(information.image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .cornerRadius(10)
-                .padding(40)
+                .cornerRadius(70)
+                .padding(20)
 
             Text(information.name)
                 .font(.title)
