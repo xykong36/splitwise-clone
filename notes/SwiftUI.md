@@ -12,8 +12,6 @@ https://www.hackingwithswift.com/100/swiftui
 
 
 
-## 
-
 
 
 Swift UI doc: https://developer.apple.com/documentation/swiftui
@@ -30,10 +28,6 @@ Goal:
 
 * display information across multiple tab views.
 * how to show data
-
-
-
-
 
 
 
@@ -240,10 +234,6 @@ struct HomeView_Previews: PreviewProvider {
 
 ### Section 4 Story Tab
 
-
-
-+ 
-
 语法点
 
 * `ScrollView` 
@@ -381,8 +371,6 @@ struct FavoritesView_Previews: PreviewProvider {
 
 * `Button` 按钮
 
-
-
 ```swift
 /*
 FunFactView
@@ -422,4 +410,113 @@ struct FunFactsView_Previews: PreviewProvider {
 ```
 
 
+
+
+
+# Presenting Content
+
+
+
+## [Edit Grids](https://developer.apple.com/tutorials/sample-apps/editinggrids)
+
+目前没有需求
+
+### Section 1 Creating the Navigation for Your App
+
+> Explore how to add navigation to your app using a [NavigationStack](https://developer.apple.com/documentation/SwiftUI/NavigationStack).
+
+
+
+### Section 2 Defining an Identifiable Type
+
+> Learn how to create data that is uniquely identifiable in SwiftUI.
+
+
+
+### Section 3 Creating a Symbol
+
+> Learn how to create an image view using an [SF Symbol](https://developer.apple.com/sf-symbols/).
+
+
+
+### Section 4 Building the Navigation Grid
+
+> Create a grid of SF Symbols from an array of `Symbol` values.
+
+
+
+### Section 5 Adding an Editing Mode
+
+> Explore how to add editing functionality to your grid, including the ability to add or delete items.
+
+
+
+这里add or delete 是在本地进行存储的么?
+
+
+
+
+
+# Retrieving Content from a Server
+
+## Meme Creator
+
+从db里面拿数据要怎么做?
+
+
+
+### Section 1 Sharing App Data
+
+Explore how the app makes its fetched data available to the entire view hierarchy.
+
+
+
+### Concepts
+
+* environment object
+* observable object
+
+
+
+
+
+```swift
+import SwiftUI
+
+@main
+struct MemeCreatorApp: App {
+    @StateObject private var fetcher = PandaCollectionFetcher()
+    
+    var body: some Scene {
+        WindowGroup {
+            NavigationStack {
+                MemeCreator()
+                    .environmentObject(fetcher)
+            }
+        }
+    }
+}
+```
+
+
+
+
+
+
+
+> Step 1
+>
+> To fetch its data, the app uses an observable object, `PandaCollectionFetcher`. This is where all of the data fetching occurs.
+
+
+
+
+
+### [Section 2](https://developer.apple.com/tutorials/sample-apps/memecreator#Creating-the-Panda-Model) Creating the Panda Model
+
+**Concepts**
+
+* `Codable`: `Decodable` 和 `Encodable`的组合
+
+### [Section 3](https://developer.apple.com/tutorials/sample-apps/memecreator#Fetching-Panda-Data) Fetching Panda Data
 

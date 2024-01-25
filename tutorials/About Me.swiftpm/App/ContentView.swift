@@ -9,7 +9,7 @@ struct ContentView: View {
         TabView {
             HomeView()
                 .tabItem {
-                    Label("Test", systemImage: "flag")
+                    Label("Home", systemImage: "flag")
                 }
             
             StoryView()
