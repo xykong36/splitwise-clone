@@ -461,7 +461,17 @@ struct FunFactsView_Previews: PreviewProvider {
 
 ## Meme Creator
 
+
+
+Follow Up
+
 从db里面拿数据要怎么做?
+
+
+
+似乎是用了AsyncImage ? 
+
+如何理解SwiftUI当中的View ? 
 
 
 
@@ -518,5 +528,199 @@ struct MemeCreatorApp: App {
 
 * `Codable`: `Decodable` 和 `Encodable`的组合
 
+
+
+这里的data model 也是base 在json file 
+
+
+
+>Step 3
+>
+>A `PandaCollection` is composed of an array of `Panda` model objects. This mirrors the format of the JSON data, which enables you to easily decode URLs and descriptive text from your JSON data into a `PandaCollection` instance.
+
+
+
+数据的format上需要对标 JSON response的形式
+
+项目的数据源中就是直接用了 sample变量数组来存
+
+```
+curl http://playgrounds-cdn.apple.com/assets/pandaData.json
+
+{
+  "sample":
+  [
+    {
+      "description":"A young panda eating bamboo off of a birthday cake.",
+      "imageUrl":"https://playgrounds-cdn.apple.com/assets/pandas/pandaBday.jpg"
+    },
+    {
+      "description":"A young panda clutching bamboo while their eyes bulge.",
+      "imageUrl":"https://playgrounds-cdn.apple.com/assets/pandas/pandaBuggingOut.jpg"
+    },
+    ...
+}
+```
+
+
+
+
+
+```swift
+/*
+Panda.swift
+*/
+
+import SwiftUI
+
+struct Panda: Codable {
+    var description: String
+    var imageUrl: URL?
+    
+    static let defaultPanda = Panda(description: "Cute Panda",
+                                    imageUrl: URL(string: "https://assets.devpubs.apple.com/playgrounds/_assets/pandas/pandaBuggingOut.jpg"))
+}
+struct PandaCollection: Codable {
+    var sample: [Panda]
+}
+
+```
+
+
+
 ### [Section 3](https://developer.apple.com/tutorials/sample-apps/memecreator#Fetching-Panda-Data) Fetching Panda Data
 
+语法点
+
+* `ObservableObject`
+* `@Published`: 自动管理订阅和通知机制
+* `guard let` : 进行early exit check的方法，不满足条件的时候直接从函数或方法中返回 一行代码可以减少嵌套
+
+```swift
+/* PandaCollectionFetcher.swift */
+
+import SwiftUI
+
+// ObservableObject can publish changes to its values to all UI elements observing them. 
+class PandaCollectionFetcher: ObservableObject {
+    @Published var imageData = PandaCollection(sample: [Panda.defaultPanda])
+    @Published var currentPanda = Panda.defaultPanda
+    
+    let urlString = "http://playgrounds-cdn.apple.com/assets/pandaData.json"
+    
+    enum FetchError: Error {
+        case badRequest
+        case badJSON
+    }
+    
+     func fetchData() async 
+     throws  {
+        guard let url = URL(string: urlString) else { return }
+
+
+        let (data, response) = try await URLSession.shared.data(for: URLRequest(url: url))
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw FetchError.badRequest }
+
+
+        Task { @MainActor in
+            imageData = try JSONDecoder().decode(PandaCollection.self, from: data)
+        }
+    }
+    
+}
+```
+
+
+
+
+
+### [Section 4](https://developer.apple.com/tutorials/sample-apps/memecreator#Creating-Asynchronous-Images) Creating Asynchronous Images
+
+
+
+Load an image 为什么也是asynchronously ? 
+
+
+
+> Step 1
+>
+> When you have the JSON data, you can use it to load panda images. To accomplish this, compose your `LoadableImage` view from [AsyncImage](https://developer.apple.com/documentation/SwiftUI/AsyncImage), a view that loads an image asynchronously.
+
+
+
+使用特殊的View来
+
+
+
+
+
+使用不同的phase数据来进行UI的选择和呈现
+
+>Step 4
+>
+>When you create an instance of `AsyncImage`, SwiftUI provides you with phase data, which updates you on the state of image loading. For example, `phase.error` provides you with errors that occur, while `phase.image` provides an image, if available. You can use the phase data to show the appropriate UI based on the phase state
+
+
+
+```swift
+/* LoadableImage.swift */
+
+import SwiftUI
+
+struct LoadableImage: View {
+    var imageMetadata: Panda
+    
+    var body: some View {
+        AsyncImage(url: imageMetadata.imageUrl) { phase in 
+            if let image = phase.image {
+                image
+                    .resizable()
+                    .scaledToFit()
+                    .cornerRadius(15)
+                    .shadow(radius: 5)
+                    .accessibility(hidden: false)
+                    .accessibilityLabel(Text(imageMetadata.description))
+            }  else if phase.error != nil  {
+                VStack {
+                    Image("pandaplaceholder")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(maxWidth: 300)
+                    Text("The pandas were all busy.")
+                        .font(.title2)
+                    Text("Please try again.")
+                        .font(.title3)
+                }
+                
+            } else {
+                ProgressView()
+            }
+        }
+    }
+}
+
+
+struct Panda_Previews: PreviewProvider {
+    static var previews: some View {
+        LoadableImage(imageMetadata: Panda.defaultPanda)
+    }
+}
+```
+
+
+
+
+
+### [Section 5](https://developer.apple.com/tutorials/sample-apps/memecreator#Making-the-Meme-Creator) Making the Meme Creator
+
+讲解如何能够生成 Meme generating UI. 
+
+
+
+**语法点**
+
+* EnvironmentObject
+
+
+
+点了Add Text button 之后只能添加字符串 没有给隐藏选项 

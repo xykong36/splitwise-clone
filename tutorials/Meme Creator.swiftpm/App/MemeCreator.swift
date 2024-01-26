@@ -58,6 +58,7 @@ struct MemeCreator: View, Sendable {
 
             HStack {
                 Button {
+                    // 这个if是为了确定能够拿到random Image
                     if let randomImage = fetcher.imageData.sample.randomElement() {
                         fetcher.currentPanda = randomImage
                     }
