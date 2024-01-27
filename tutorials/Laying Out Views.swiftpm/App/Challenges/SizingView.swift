@@ -23,7 +23,7 @@ struct SizingView: View {
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
                     .foregroundColor(.paleOrange)
-                    .frame(maxWidth: 200, maxHeight: 150)
+                    .frame(maxWidth: 700, maxHeight: 150)
                 VStack {
                     Text("I just love")
                     Image("Heart")

@@ -77,6 +77,8 @@ class JournalData: ObservableObject {
     func load() {
         do {
             let fileURL = try JournalData.getDataFileURL()
+            print("journal app data file: ")
+            print(fileURL)
             let data = try Data(contentsOf: fileURL)
             entries = try JSONDecoder().decode([Entry].self, from: data)
             print("Entry loaded: \(entries.count)")

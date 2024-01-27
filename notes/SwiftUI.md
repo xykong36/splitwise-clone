@@ -486,6 +486,383 @@ When creating an app, one of the first skills to learn is how to lay out your us
 
 
 
+### [Section 1](https://developer.apple.com/tutorials/sample-apps/layingoutviews#Organize-your-views) Organize your views
+
+
+
+
+
+默认的形状和大小可以自适应 可以加modifier进行修改
+
+> Step 2
+>
+> `Shape` views expand to fill the entire space that’s offered by the container view. Because there are two shape views that need to share the space in the `VStack` equally, their sizes adapt accordingly.
+
+
+
+根据需要选择不同类型的container
+
+* `VStack` : 上下排列 上
+
+* `HStack`: 水平排列 
+
+* `ZStack`: Z 轴上排列 堆叠效果
+
+
+
+> Step 6
+>
+> There are more containers than just `HStack`, `VStack`, and `ZStack` views. To explore different containers and how to use them to lay out your content, see [Picking container views for your content](https://developer.apple.com/documentation/SwiftUI/Picking-Container-Views-for-Your-Content)
+
+```swift
+/*
+LayingOutContainersView.swift
+*/
+
+import SwiftUI
+
+struct LayingOutContainersView: View {
+    var body: some View {
+        VStack {
+            ZStack {
+                Rectangle()
+                    .foregroundColor(.themeGreen)
+                Circle()
+                    .foregroundColor(.themePink)
+            }
+            ZStack {
+                Rectangle()
+                    .foregroundColor(.themeBlue)
+                    .frame(width: 200, height: 300)
+                HStack {
+                    Circle()
+                        .foregroundColor(.themeRed)
+                    Circle()
+                        .foregroundColor(.themeOrange)
+                }
+            }
+        }
+    }
+}
+
+struct LayingOutContainersView_Previews: PreviewProvider {
+    static var previews: some View {
+        LayingOutContainersView()
+    }
+}
+
+```
+
+
+
+<img src="../screenshot/layout-views.png" width=200>
+
+
+
+view是一个container 在里面可以放置subviews
+
+
+
+
+
+### [Section 2](https://developer.apple.com/tutorials/sample-apps/layingoutviews#Modify-and-determine-view-sizes) Modify and determine view sizes
+
+>Step 4
+>
+>Views are somewhat magical, in that certain view types control how they resize when placed in a container. They can expand to fill the available space, such as `Rectangle` or other [Shape](https://developer.apple.com/documentation/SwiftUI/Shape).
+
+
+
+可以使用动态调整
+
+> Step 7
+>
+> Providing fixed values for the `width` and `height` limits how adaptive the view can be. 🙃
+>
+> Tip
+>
+> A better way to do this is to give a maximum, minimum, or ideal width and height for a view. This allows the view to resize as necessary based on how much space is available in the container.
+
+
+
+尽可能避免使用`.frame`
+
+> Step 9
+>
+> Adding a `frame` to an image can sometimes cause it to look stretched even by adding an ideal `width` and `height`. For images, it’s often better to use [`scaledToFill()`](https://developer.apple.com/documentation/SwiftUI/View/scaledToFill()) or doc://com.apple.documentation/documentation/swiftui/menu/scaledtofit() instead of a `frame`.
+>
+> Tip
+>
+> Using both can help get a precise size for an image that is not distorted or too large.
+
+
+
+### [Section 3](https://developer.apple.com/tutorials/sample-apps/layingoutviews#Refine-the-spacing-and-alignment-of-your-views) Refine the spacing and alignment of your views
+
+对于API的熟悉程度 能不能直接讲样式调整成自己想要的样子
+
+讲解三种不同进行spacing和 alignment的方式
+
+* 直接在View中添加alignment parameter e.g. `VStack(alignment: .leading) `  提问Mark: 这里应该是因为特定类型的View才有alignment property
+* 在frame modifier中添加alignment parameter e.g. `.frame(maxWidth: .infinity, alignment: .trailing)`
+* 直接使用[Spacer](https://developer.apple.com/documentation/SwiftUI/Spacer) (A flexible space that expands along the major axis of its containing stack layout, or on both axes if not contained in a stack.) ` HStack(spacing: 20) { Spacer()}`
+
+
+
+Layout 相关可能需要用
+
+
+
+不同类型的Stack 使用的`alignment` 类型是不一致的
+
+
+
+>Step 4
+>
+>In vertical stacks, you can only set the horizontal alignment, like `.leading` or `.trailing`.
+>
+>Note
+>
+>In horizontal stacks you can only set the vertical alignment, like `.top` or `.bottom`.
+
+
+
+>Adding a `Spacer` inside an `HStack` causes the stack to expand to fill in any remaining horizontal space, and pushes the `Image` view to the `.trailing` edge.
+
+```swift
+/* AmazingAlignment.swift */
+
+import SwiftUI
+
+struct AmazingAlignment: View {
+    var body: some View {
+        VStack(alignment: .leading) {
+            Image(systemName: "books.vertical.fill")
+                .font(.system(size: 40))
+            Rectangle()
+                .frame(maxWidth: .infinity, maxHeight: 10)
+            VStack (alignment: .trailing){
+                // 这里是直接套娃了 在VStack当中嵌套VStack
+                Image(systemName: "books.vertical.fill")
+                    .font(.system(size: 40))
+                    
+                Rectangle()
+                    .frame(maxWidth: .infinity, maxHeight: 10)
+            }
+            Image(systemName: "books.vertical.fill")
+                .font(.system(size: 40))
+                .frame(maxWidth: .infinity, alignment: .trailing)
+            Rectangle()
+                .frame(maxWidth: .infinity, maxHeight: 10)
+            HStack(spacing: 20) {
+                Spacer()
+                Image(systemName: "books.vertical.fill")
+                    .font(.system(size: 40))
+                    .background(Color.yellow)
+                Image(systemName: "books.vertical.fill")
+                    .font(.system(size: 40))
+                    .padding(.trailing, 20)
+            }
+            .background(Color.mint)
+            Rectangle()
+                .frame(maxWidth: .infinity, maxHeight: 10)
+        }
+        .padding(.horizontal)
+        .frame(width: 250) // 这里的width会直接对上面VStack中的所有view进行调整
+        .border(Color.black)
+    }
+}
+
+// 下面的代码是用来展示Preview的
+struct AmazingAlignment_Previews: PreviewProvider {
+    static var previews: some View {
+        AmazingAlignment()
+    }
+}
+```
+
+
+
+### [Section 4](https://developer.apple.com/tutorials/sample-apps/layingoutviews#Debugging-views) Debugging views
+
+
+
+两个View的组合嵌套? 
+
+可以将修改和更新同时应用到上下两个Half Card之中
+
+
+
+
+
+这个Section主要是集中在overlay的使用上
+
+
+
+小技巧 在debug View的时候添加border来帮助划清界限
+
+>Step 3
+>
+>Any code applied to the `HalfCard` view affects both the top and bottom halves of the card, allowing you to fix issues in both halves at the same time.
+>
+>Tip
+>
+>Adding a border to a view is a great debugging tool because it allows you to see how much space a view occupies. You can use this technique to diagnose lots of issues in your code.
+
+
+
+每加一个modifier都会新建一个View 所以`border`的顺序会有区别
+
+>Step 5
+>
+>Even though the frame expanded, all of the graphics are still squished together. Add another border above the `frame` modifier. This allows you to see the outline of the `VStack` before you apply the `frame`.
+>
+>Tip
+>
+>You might wonder, why would it make a difference if you apply the border before or after the `frame`? This is because you actually produce a new view each time you apply a modifier, so the order that you apply them really matters. See [Configuring views](https://developer.apple.com/documentation/SwiftUI/Configuring-Views) for more on this.
+
+
+
+`frame`中添加alignment选项会更灵活，不受到具体View类型的限制
+
+>Step 10
+>
+>There are two ways to align the crown to the bottom of your `HalfCard` view. You can add the `alignment` parameter to the `frame`– `.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)` Or, add a `Spacer` above the crown.
+
+
+
+```swift
+/*
+DebuggingViews.swift
+*/
+
+import SwiftUI
+
+struct HalfCard: View {
+    var body: some View {
+        VStack() {
+//            Spacer()
+            Image(systemName: "crown.fill")
+                .font(.system(size: 180))
+        }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity, alignment: .top)
+        .border(Color.pink)
+        //#-learning-code-snippet(6.debugFrameCorrection)
+        .overlay (alignment: .topLeading) {
+            VStack {
+                Image(systemName: "crown.fill")
+                    .font(.body)
+                Text("Q")
+                    .font(.largeTitle)
+                Image(systemName: "heart.fill")
+                    .font(.title)
+            }
+            .padding()
+        }
+        .border(Color.blue)
+        .border(Color.green)
+        //#-learning-code-snippet(6.debugFrameQuestion)
+        //#-learning-code-snippet(6.debugFrame)
+        //#-learning-code-snippet(6.debugBorder)
+    }
+}
+
+struct DebuggingView: View {
+    var body: some View {
+        VStack {
+            HalfCard()
+            HalfCard()
+                .rotationEffect(.degrees(180))
+        }
+        .background(
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(Color.black)
+        )
+        .aspectRatio(0.70, contentMode: .fit)
+        .foregroundColor(.red)
+        .padding()
+    }
+}
+
+struct DebuggingView_Previews: PreviewProvider {
+    static var previews: some View {
+        DebuggingView()
+    }
+}
+
+```
+
+
+
+### [Section 5](https://developer.apple.com/tutorials/sample-apps/layingoutviews#Bringing-it-all-together) Bringing it all together
+
+![image-20240127145408358](../screenshot/emoji-list-1.png)
+
+
+
+![image-20240127145456340](../screenshot/emoji-list-2.png)
+
+
+
+UI美化两个简单的起步:
+
+* 增加 `padding` 给一些空间 
+* 修改`maxWidth` 来拉宽 
+
+
+
+```swift
+/* MoodViewFull.swift */
+
+import SwiftUI
+
+
+struct MoodViewFull: View {
+    @Binding var value: String
+    private let emojis = ["😢", "😴", "😁", "😡", "😐"]
+    
+    var body: some View {
+        VStack {
+            Text("What's your mood?")
+                .foregroundColor(.darkBrown)
+                .font(.headline)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            HStack {
+                ForEach(emojis, id: \.self) { emoji in
+                    Button {
+                        value = emoji
+                    } label: {
+                        VStack {
+                            Text(emoji)
+                                .font(.system(size: 35))
+                                .frame(maxWidth: .infinity, alignment: .center)
+                                .padding(.bottom)
+                            Image(systemName: value == emoji ? "circle.fill" : "circle")
+                                .font(.system(size: 16))
+                                .foregroundColor(.darkBrown)
+                        }
+                    }
+                }
+            }
+            .frame(maxHeight: .infinity, alignment: .center)
+        }
+        .frame(minHeight: 100, maxHeight: 200)
+        .padding()
+    }
+}
+```
+
+
+
+大概知道了一个 具体问题遇到了再回来看就行了
+
+
+
+做App这件事对于交互很重要
+
+vision Pro 做真人?  
+
+
+
 
 
 

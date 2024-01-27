@@ -9,13 +9,14 @@ struct LayingOutContainersView: View {
         VStack {
             ZStack {
                 Rectangle()
-                    .foregroundColor(.themeBlue)
+                    .foregroundColor(.themeGreen)
                 Circle()
                     .foregroundColor(.themePink)
             }
             ZStack {
                 Rectangle()
                     .foregroundColor(.themeBlue)
+                    .frame(width: 200, height: 300)
                 HStack {
                     Circle()
                         .foregroundColor(.themeRed)
