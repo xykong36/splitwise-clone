@@ -457,6 +457,39 @@ struct FunFactsView_Previews: PreviewProvider {
 
 
 
+
+## Laying Out Views
+
+
+
+这个项目的复杂度有点高啊 
+
+给出的Demo文件 和教程中的内容不一致 Demo是一个日记本 Journal 
+
+而Tutorials中提到的文件其实都是
+
+各种Folder中的文件都是干嘛用的
+
+如何快速
+
+
+
+Organize, size and align view layouts.
+
+
+
+When creating an app, one of the first skills to learn is how to lay out your user interface, or UI. When laying out a UI, there are three major things you need to do:
+
+- Organize your views in different configurations using container views.
+- Fine tune the sizing, spacing, alignment, and positioning of your views.
+- Debug your views when something goes wrong.
+
+
+
+
+
+
+
 # Retrieving Content from a Server
 
 ## Meme Creator
