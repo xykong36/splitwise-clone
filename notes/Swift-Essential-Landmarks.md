@@ -652,7 +652,7 @@ struct LandmarkList: View {
 
 
 
-Composing complex interfaces 
+
 
 
 
@@ -673,3 +673,84 @@ Composing complex interfaces
 
 
 没太大兴趣 先跳过
+
+
+
+
+
+## Composing complex interfaces 
+
+
+
+### [Section 1](https://developer.apple.com/tutorials/swiftui/composing-complex-interfaces#Add-a-category-view) Add a category view
+
+
+
+如果需要跳转肯定是要有NavigationSplitView + NavigationLink的
+
+
+
+### [Section 2](https://developer.apple.com/tutorials/swiftui/composing-complex-interfaces#Create-a-category-list) Create a category list
+
+横向的List如何进行管理? 
+
+
+
+
+
+还是相同的数据集 但是不同的展示方式 一鱼多吃 而且如何有机的展示信息也是很考验UI设计功底的事情
+
+
+
+字典里面直接有集合
+
+
+
+> Step 1
+>
+> In `Landmark`, add a `Category` enumeration and a `category` property to the `Landmark` structure.
+>
+> The `landmarkData` file already includes a `category` value for each landmark with one of three string values. By matching the names in the data file, you can rely on the structure’s `Codable` conformance to load the data.
+
+
+
+category 累别的数据是已经有了的 但是直接使用Dictionary来用自己定义的会更直接一点
+
+
+
+modelData property是什么意思?  
+
+
+
+
+
+` ScrollView(.horizontal,` 竖排滑动展示 
+
+
+
+
+
+用来强制解包 提取元素
+
+`!`: 在Swift中，`!`（感叹号）是一个强制解包操作符。当它用在一个可选类型（Optional）后面时，它的作用是强制从这个可选类型中取出其包含的值。
+
+
+
+
+
+### [Section 4](https://developer.apple.com/tutorials/swiftui/composing-complex-interfaces#Complete-the-category-view) Complete the category view
+
+
+
+### [Section 5](https://developer.apple.com/tutorials/swiftui/composing-complex-interfaces#Add-navigation-between-sections) Add navigation between sections
+
+
+
+> With all of the differently categorized landmarks visible in the view, the user needs a way to reach each section in the app. Use the navigation and presentation APIs to make the category home, the detail view, and favorites list navigable from a tab view.
+
+
+
+
+
+
+
