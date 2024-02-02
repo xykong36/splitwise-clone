@@ -754,3 +754,40 @@ modelData property是什么意思?
 
 
 
+# Interfacing with UIKit
+
+
+
+> SwiftUI works seamlessly with the existing UI frameworks on all Apple platforms. For example, you can place UIKit views and view controllers inside SwiftUI views, and vice versa.
+>
+> This tutorial shows you how to convert the featured landmark from the home screen to wrap instances of `UIPageViewController` and `UIPageControl`. You’ll use `UIPageViewController` to display a carousel of SwiftUI views, and use state variables and bindings to coordinate data updates throughout the user interface.
+
+
+
+几个问题 UIKit 和 SwiftUI的关系是什么? 
+
+
+
+UIKit 是曾经的开发框架 SwiftUI 和 UIKit 可以混用
+
+
+
+### [Section 1](https://developer.apple.com/tutorials/swiftui/interfacing-with-uikit#Create-a-view-to-represent-a-UIPageViewController) Create a view to represent a UIPageViewController
+
+> To represent UIKit views and view controllers in SwiftUI, you create types that conform to the `UIViewRepresentable` and `UIViewControllerRepresentable` protocols. Your custom types create and configure the UIKit types that they represent, while SwiftUI manages their life cycle and updates them when needed.
+
+
+
+`UIViewRepresentable`
+
+`UIViewControllerRepresentable`
+
+
+
+section 1 complete
+
+### [Section 2](https://developer.apple.com/tutorials/swiftui/interfacing-with-uikit#Create-the-view-controllers-data-source) Create the view controller’s data source
+
+### [Section 3](https://developer.apple.com/tutorials/swiftui/interfacing-with-uikit#Track-the-page-in-a-SwiftUI-views-state) Track the page in a SwiftUI view’s state
+
+这里的track是啥意思? 为什么需要track ? 
