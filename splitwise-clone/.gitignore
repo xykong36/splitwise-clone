@@ -1,0 +1,73 @@
+# Xcode
+.DS_Store
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcodeproj/xcuserdata/
+*.xcworkspace/*
+!*.xcworkspace/contents.xcworkspacedata
+!*.xcworkspace/xcshareddata/
+!*.xcworkspace/xcuserdata/
+xcuserdata/
+DerivedData/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+build/
+*.pbxuser
+!default.pbxuser
+*.perspectivev3
+!default.perspectivev3
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
+
+# Swift Package Manager
+.build/
+Packages/
+Package.resolved
+.swift-dependencies
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/
+Carthage/Build
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/.env
+
+# Various IDEs and editors
+.idea/
+.vscode/
+*.swp
+*~
+*.bak
+
+# OS X
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
