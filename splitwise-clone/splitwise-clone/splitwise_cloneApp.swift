@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct AboutMeApp: App {
+    @StateObject var purchaseData = PurchaseData()
     var body: some Scene {
         WindowGroup {
             ContentView()
