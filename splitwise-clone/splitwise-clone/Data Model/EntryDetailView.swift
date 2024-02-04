@@ -10,12 +10,25 @@ import SwiftUI
 struct EntryDetailView: View {
     var entry: Entry
     
+    private let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        return formatter
+    }()
+    
+    private let currencyFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        return formatter
+    }()
+    
     var body: some View {
         VStack {
             Text("Title: \(entry.title)")
-            Text("Amount: \(entry.amount)")
+            Text("Amount: \(currencyFormatter.string(from: NSNumber(value: entry.amount)) ?? "")")
+            Text("Date: \(dateFormatter.string(from: entry.date))")
             // Add additional details as needed
         }
-        .navigationBarTitle("Entry Details", displayMode: .inline)
+        .navigationBarTitle("Expense Details", displayMode: .inline)
     }
 }

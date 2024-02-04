@@ -29,7 +29,8 @@ struct AddItemView: View {
                         }
                     }
                 }
-                .navigationBarTitle("Add Item")
+                .listStyle(PlainListStyle())
+                .navigationBarTitle("My Expense")
 
                 Spacer()
                 
@@ -52,7 +53,8 @@ struct AddItemView: View {
 struct NewEntryView: View {
     
     @ObservedObject var purchaseData: PurchaseData
-    @State private var newEntry = Entry(title: "", amount: 0)
+    @State private var newEntry = Entry(title: "", amount: 0, date: Date(), members: [])
+    @State private var selectedDate = Date()
     
     // Number formatter for currency input
     private let currencyFormatter: NumberFormatter = {
@@ -68,10 +70,36 @@ struct NewEntryView: View {
                 
                 TextField("Amount", value: $newEntry.amount, formatter: currencyFormatter)
                     .keyboardType(.decimalPad)
+                
+                DatePicker("Date", selection: $selectedDate, in: ...Date(), displayedComponents: .date)
+                    .datePickerStyle(.compact)
+                
+                // TextFields to input member names
+                ForEach(newEntry.members.indices, id: \.self) { index in
+                    TextField("Member \(index + 1)", text: Binding(
+                        get: {
+                            let member = newEntry.members[index]
+                            return member.names.joined(separator: ", ")
+                        },
+                        set: {
+                            let names = $0.components(separatedBy: ", ")
+                            newEntry.members[index].names = names
+                        }
+                    ))
+                }
+                
+                Button("Add Member") {
+                    newEntry.members.append(Member(count: newEntry.members.count + 1, names: [""]))
+                }
             }
             
             Button("Save") {
+                newEntry.date = selectedDate
+                // Remove members with empty names before saving
+                newEntry.members = newEntry.members.filter { !$0.names.isEmpty }
                 purchaseData.entries.append(newEntry)
+                
+                newEntry = Entry(title: "", amount: 0)
             }
         }
         .navigationBarTitle("New Entry", displayMode: .inline)
