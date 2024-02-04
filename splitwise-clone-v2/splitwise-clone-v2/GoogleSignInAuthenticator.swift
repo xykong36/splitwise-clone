@@ -40,9 +40,12 @@ final class GoogleSignInAuthenticator: ObservableObject {
                 print("Unable to retrieve the user.")
                 return
             }
-
+            
             // Set the authViewModel's state to signed in with the user's information
             self.authViewModel.state = .signedIn(user)
+            
+            // Success print statement
+            print("Successfully signed in with Google!")
         }
     }
         
