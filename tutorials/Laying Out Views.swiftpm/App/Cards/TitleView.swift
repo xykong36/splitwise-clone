@@ -1,6 +1,6 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
@@ -11,7 +11,7 @@ struct TitleView: View {
         ZStack {
             EntryBannerTheme(forTheme: entry.theme)
                 .modifier(EntryBannerStyle(theme: entry.theme))
-            
+
             if isEditing {
                 TextField("Add title", text: $entry.title)
                     .font(entry.font.uiFont(30))
@@ -26,7 +26,6 @@ struct TitleView: View {
         }
     }
 }
-
 
 struct TitleView_Previews: PreviewProvider {
     static var previews: some View {

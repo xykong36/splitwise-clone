@@ -1,38 +1,38 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
-class SmallDot : Identifiable, ObservableObject {
-	let id = UUID()
-    
-	@Published var offset : CGSize = .zero
-	@Published var color : Color = .primary
+class SmallDot: Identifiable, ObservableObject {
+    let id = UUID()
+
+    @Published var offset: CGSize = .zero
+    @Published var color: Color = .primary
 }
 
-class BigDot : Identifiable, ObservableObject {
+class BigDot: Identifiable, ObservableObject {
     let id = UUID()
-    
+
     @Published var offset: CGSize = .zero
     @Published var color: Color = .primary
     @Published var scale: Double = 1.0
     @Published var smallDots = [SmallDot]()
-    
+
     init() {
-        for _ in 0..<5 {
+        for _ in 0 ..< 5 {
             smallDots.append(SmallDot())
         }
     }
-    
+
     func randomizePositions() {
         objectWillChange.send()
         for dot in smallDots {
-            dot.offset = CGSize(width: Double.random(in: -120...120), height: Double.random(in: -120...120))
+            dot.offset = CGSize(width: Double.random(in: -120 ... 120), height: Double.random(in: -120 ... 120))
             dot.color = DotTracker.randomColor
         }
     }
- 
+
     func resetPositions() {
         objectWillChange.send()
         for dot in smallDots {
@@ -40,33 +40,32 @@ class BigDot : Identifiable, ObservableObject {
             dot.color = .primary
         }
     }
-
 }
 
-class DotTracker : ObservableObject {
+class DotTracker: ObservableObject {
     @Published var bigDots = [BigDot]()
-    
+
     static var colors: [Color] = [.pink, .purple, .mint, .blue, .yellow, .red, .teal, .cyan]
     static var randomColor: Color {
         colors.randomElement() ?? .blue
     }
-    
+
     init() {
-        for _ in 0..<100 {
+        for _ in 0 ..< 100 {
             bigDots.append(BigDot())
         }
     }
-    
+
     func randomizePositions() {
         objectWillChange.send()
         for bigDot in bigDots {
-            bigDot.offset = CGSize(width: Double.random(in: -50...50), height: Double.random(in: -50...50))
+            bigDot.offset = CGSize(width: Double.random(in: -50 ... 50), height: Double.random(in: -50 ... 50))
             bigDot.scale = 2.5
             bigDot.color = DotTracker.randomColor
             bigDot.randomizePositions()
         }
     }
-    
+
     func resetPositions() {
         objectWillChange.send()
         for bigDot in bigDots {
@@ -76,7 +75,6 @@ class DotTracker : ObservableObject {
             bigDot.resetPositions()
         }
     }
-
 }
 
 struct DancingDotsView: View {
@@ -104,7 +102,7 @@ struct DancingDotsView: View {
             }
             .frame(minHeight: 500)
             .drawingGroup()
-            Spacer() 
+            Spacer()
             PlayResetButton(animating: $isAnimating) {
                 withAnimation(.spring(response: 0.6, dampingFraction: 0.5, blendDuration: 1).repeatForever()) {
                     if isAnimating {

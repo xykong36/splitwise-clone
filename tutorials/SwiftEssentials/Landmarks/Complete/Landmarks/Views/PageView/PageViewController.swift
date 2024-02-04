@@ -1,9 +1,9 @@
 /*
-See the LICENSE.txt file for this sample’s licensing information.
+ See the LICENSE.txt file for this sample’s licensing information.
 
-Abstract:
-A view that wraps a UIPageViewController.
-*/
+ Abstract:
+ A view that wraps a UIPageViewController.
+ */
 
 import SwiftUI
 import UIKit
@@ -19,7 +19,8 @@ struct PageViewController<Page: View>: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> UIPageViewController {
         let pageViewController = UIPageViewController(
             transitionStyle: .scroll,
-            navigationOrientation: .horizontal)
+            navigationOrientation: .horizontal
+        )
         pageViewController.dataSource = context.coordinator
         pageViewController.delegate = context.coordinator
 
@@ -28,7 +29,8 @@ struct PageViewController<Page: View>: UIViewControllerRepresentable {
 
     func updateUIViewController(_ pageViewController: UIPageViewController, context: Context) {
         pageViewController.setViewControllers(
-            [context.coordinator.controllers[currentPage]], direction: .forward, animated: true)
+            [context.coordinator.controllers[currentPage]], direction: .forward, animated: true
+        )
     }
 
     class Coordinator: NSObject, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
@@ -41,8 +43,9 @@ struct PageViewController<Page: View>: UIViewControllerRepresentable {
         }
 
         func pageViewController(
-            _ pageViewController: UIPageViewController,
-            viewControllerBefore viewController: UIViewController) -> UIViewController? {
+            _: UIPageViewController,
+            viewControllerBefore viewController: UIViewController
+        ) -> UIViewController? {
             guard let index = controllers.firstIndex(of: viewController) else {
                 return nil
             }
@@ -53,8 +56,9 @@ struct PageViewController<Page: View>: UIViewControllerRepresentable {
         }
 
         func pageViewController(
-            _ pageViewController: UIPageViewController,
-            viewControllerAfter viewController: UIViewController) -> UIViewController? {
+            _: UIPageViewController,
+            viewControllerAfter viewController: UIViewController
+        ) -> UIViewController? {
             guard let index = controllers.firstIndex(of: viewController) else {
                 return nil
             }
@@ -66,12 +70,14 @@ struct PageViewController<Page: View>: UIViewControllerRepresentable {
 
         func pageViewController(
             _ pageViewController: UIPageViewController,
-            didFinishAnimating finished: Bool,
-            previousViewControllers: [UIViewController],
-            transitionCompleted completed: Bool) {
+            didFinishAnimating _: Bool,
+            previousViewControllers _: [UIViewController],
+            transitionCompleted completed: Bool
+        ) {
             if completed,
                let visibleViewController = pageViewController.viewControllers?.first,
-               let index = controllers.firstIndex(of: visibleViewController) {
+               let index = controllers.firstIndex(of: visibleViewController)
+            {
                 parent.currentPage = index
             }
         }

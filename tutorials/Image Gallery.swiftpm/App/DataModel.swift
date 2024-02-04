@@ -1,13 +1,12 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import Foundation
 
 class DataModel: ObservableObject {
-    
     @Published var items: [Item] = []
-    
+
     init() {
         if let documentDirectory = FileManager.default.documentDirectory {
             let urls = FileManager.default.getContentsOfDirectory(documentDirectory).filter { $0.isImage }
@@ -16,7 +15,7 @@ class DataModel: ObservableObject {
                 items.append(item)
             }
         }
-        
+
         if let urls = Bundle.main.urls(forResourcesWithExtension: "jpg", subdirectory: nil) {
             for url in urls {
                 let item = Item(url: url)
@@ -24,12 +23,12 @@ class DataModel: ObservableObject {
             }
         }
     }
-    
+
     /// Adds an item to the data collection.
     func addItem(_ item: Item) {
         items.insert(item, at: 0)
     }
-    
+
     /// Removes an item from the data collection.
     func removeItem(_ item: Item) {
         if let index = items.firstIndex(of: item) {
@@ -43,7 +42,6 @@ extension URL {
     /// Indicates whether the URL has a file extension corresponding to a common image format.
     var isImage: Bool {
         let imageExtensions = ["jpg", "jpeg", "png", "gif", "heic"]
-        return imageExtensions.contains(self.pathExtension)
+        return imageExtensions.contains(pathExtension)
     }
 }
-

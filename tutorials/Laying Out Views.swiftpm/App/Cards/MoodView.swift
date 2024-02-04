@@ -1,6 +1,6 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
@@ -9,7 +9,7 @@ struct MoodView: View {
     var isEditing: Bool
     var fontStyle: JournalFont
     var size: CardSize
-    
+
     static var disableMoodViewFull = false
 
     var body: some View {
@@ -18,9 +18,5 @@ struct MoodView: View {
         } else {
             MoodViewFull(value: $value, isEditing: isEditing, fontStyle: fontStyle)
         }
-
     }
 }
-
-
-

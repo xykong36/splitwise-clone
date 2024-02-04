@@ -1,9 +1,9 @@
 /*
-See the LICENSE.txt file for this sample’s licensing information.
+ See the LICENSE.txt file for this sample’s licensing information.
 
-Abstract:
-A view showing featured landmarks above a list of all of the landmarks.
-*/
+ Abstract:
+ A view showing featured landmarks above a list of all of the landmarks.
+ */
 
 import SwiftUI
 

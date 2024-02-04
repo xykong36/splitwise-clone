@@ -1,9 +1,9 @@
 /*
-See the LICENSE.txt file for this sample’s licensing information.
+ See the LICENSE.txt file for this sample’s licensing information.
 
-Abstract:
-A view that shows a featured landmark.
-*/
+ Abstract:
+ A view that shows a featured landmark.
+ */
 
 import SwiftUI
 
@@ -26,7 +26,8 @@ struct TextOverlay: View {
         .linearGradient(
             Gradient(colors: [.black.opacity(0.6), .black.opacity(0)]),
             startPoint: .bottom,
-            endPoint: .center)
+            endPoint: .center
+        )
     }
 
     var body: some View {

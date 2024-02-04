@@ -1,6 +1,6 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
@@ -16,7 +16,6 @@ struct YourTitleBannerView: View {
                         .frame(width: 15)
                         .foregroundColor(.bannerYellow)
                         .offset(x: -10, y: -5)
-
                 }
                 ZStack {
                     Circle()
@@ -27,15 +26,14 @@ struct YourTitleBannerView: View {
             }
             Spacer()
             ZStack {
-                 Circle()
-                     .frame(width: 40)
-                     .foregroundColor(.bannerBlue)
-                     .offset(x: 5, y: -10)
+                Circle()
+                    .frame(width: 40)
+                    .foregroundColor(.bannerBlue)
+                    .offset(x: 5, y: -10)
                 Circle()
                     .frame(width: 30)
                     .foregroundColor(.bannerPink)
                     .offset(x: 6, y: 5)
-                
             }
         }
     }
@@ -46,4 +44,3 @@ struct YourTitleBannerView_Previews: PreviewProvider {
         TitleBannerPreview()
     }
 }
-

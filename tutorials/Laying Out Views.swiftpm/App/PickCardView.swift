@@ -1,6 +1,6 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
@@ -10,7 +10,7 @@ struct PickCardView: View {
 
     var body: some View {
         VStack {
-            Grid (horizontalSpacing: 15, verticalSpacing: 15) {
+            Grid(horizontalSpacing: 15, verticalSpacing: 15) {
                 GridRow {
                     Color.clear
                         .gridCellUnsizedAxes([.horizontal, .vertical])
@@ -20,7 +20,7 @@ struct PickCardView: View {
                         .modifier(FontStyle(size: 18))
                 }
 
-                ForEach(Card.allCases, id: \.id){ option in
+                ForEach(Card.allCases, id: \.id) { option in
                     GridRow {
                         Text(Card.title(option))
                             .modifier(FontStyle(size: 18))
@@ -35,7 +35,7 @@ struct PickCardView: View {
                         .disabled(SleepView.disableSleepViewHalf &&
                             option == .sleep(value: 0))
                         .opacity(option == .sleep(value: 0) && SleepView.disableSleepViewHalf ? 0.5 : 1)
-                        
+
                         Button {
                             entry.addCard(card: CardData(card: option, size: .large))
                             showingSheet = false
@@ -46,7 +46,6 @@ struct PickCardView: View {
                         .disabled(MoodView.disableMoodViewFull &&
                             option == .mood(value: "😁"))
                         .opacity(option == .mood(value: "😁") && MoodView.disableMoodViewFull ? 0.5 : 1)
-
                     }
                 }
             }
@@ -82,6 +81,5 @@ struct CardOptionView: View {
                 .foregroundColor(.paleOrange)
                 .font(.system(size: 25))
         }
-
     }
 }

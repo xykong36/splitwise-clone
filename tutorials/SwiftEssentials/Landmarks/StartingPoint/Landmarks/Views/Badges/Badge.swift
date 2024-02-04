@@ -1,15 +1,15 @@
 /*
-See the LICENSE.txt file for this sample’s licensing information.
+ See the LICENSE.txt file for this sample’s licensing information.
 
-Abstract:
-A view that displays a badge.
-*/
+ Abstract:
+ A view that displays a badge.
+ */
 
 import SwiftUI
 
 struct Badge: View {
     var badgeSymbols: some View {
-        ForEach(0..<8) { index in
+        ForEach(0 ..< 8) { index in
             RotatedBadgeSymbol(
                 angle: .degrees(Double(index) / Double(8)) * 360.0
             )

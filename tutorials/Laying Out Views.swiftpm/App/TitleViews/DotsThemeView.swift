@@ -1,13 +1,13 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
 struct DotThemeView: View {
     var body: some View {
         HStack {
-            VStack{
+            VStack {
                 ZStack {
                     Circle()
                         .frame(width: 25)

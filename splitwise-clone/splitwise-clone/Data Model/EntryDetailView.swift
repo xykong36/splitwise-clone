@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EntryDetailView: View {
     var entry: Entry
-    
+
     var body: some View {
         VStack {
             Text("Title: \(entry.title)")
