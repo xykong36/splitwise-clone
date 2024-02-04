@@ -1,6 +1,6 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
@@ -13,16 +13,16 @@ struct GridView: View {
 
     @State private var gridColumns = Array(repeating: GridItem(.flexible()), count: initialColumns)
     @State private var numColumns = initialColumns
-    
+
     private var columnsTitle: String {
         gridColumns.count > 1 ? "\(gridColumns.count) Columns" : "1 Column"
     }
-    
+
     var body: some View {
         VStack {
             if isEditing {
-                ColumnStepper(title: columnsTitle, range: 1...8, columns: $gridColumns)
-                .padding()
+                ColumnStepper(title: columnsTitle, range: 1 ... 8, columns: $gridColumns)
+                    .padding()
             }
             ScrollView {
                 LazyVGrid(columns: gridColumns) {
@@ -42,9 +42,9 @@ struct GridView: View {
                                     }
                                 } label: {
                                     Image(systemName: "xmark.square.fill")
-                                                .font(Font.title)
-                                                .symbolRenderingMode(.palette)
-                                                .foregroundStyle(.white, .red)
+                                        .font(Font.title)
+                                        .symbolRenderingMode(.palette)
+                                        .foregroundStyle(.white, .red)
                                 }
                                 .offset(x: 7, y: -7)
                             }
@@ -83,4 +83,3 @@ struct GridView_Previews: PreviewProvider {
             .previewDevice("iPad (8th generation)")
     }
 }
- 

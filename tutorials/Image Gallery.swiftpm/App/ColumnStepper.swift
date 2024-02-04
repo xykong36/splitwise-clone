@@ -1,6 +1,6 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
@@ -13,8 +13,8 @@ struct ColumnStepper: View {
     init(title: String, range: ClosedRange<Int>, columns: Binding<[GridItem]>) {
         self.title = title
         self.range = range
-        self._columns = columns
-        self.numColumns = columns.count
+        _columns = columns
+        numColumns = columns.count
     }
 
     var body: some View {
@@ -26,6 +26,6 @@ struct ColumnStepper: View {
 
 struct ColumnStepper_Previews: PreviewProvider {
     static var previews: some View {
-        ColumnStepper(title: "ColumnStepper", range: 1...8, columns: .constant(Array(repeating: GridItem(.flexible()), count: 5)))
+        ColumnStepper(title: "ColumnStepper", range: 1 ... 8, columns: .constant(Array(repeating: GridItem(.flexible()), count: 5)))
     }
 }

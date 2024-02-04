@@ -1,6 +1,6 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
@@ -14,21 +14,21 @@ struct SleepViewHalf: View {
             Text("Hours Slept")
                 .foregroundColor(.darkBrown)
                 .font(fontStyle.uiFont(15))
-            //#-learning-code-snippet(6.frameAlignment)
+            // #-learning-code-snippet(6.frameAlignment)
 
             Text("\(Int(value))")
                 .foregroundColor(.darkBrown)
                 .modifier(FontStyle(size: 50))
-            //#-learning-code-snippet(5.paddingSleep)
-            
-            //#-learning-code-snippet(5.stepper)
+            // #-learning-code-snippet(5.paddingSleep)
+
+            // #-learning-code-snippet(5.stepper)
         }
-        //#-learning-code-snippet(5.sleepFrame)
-        //#-learning-code-snippet(6.paddingCard)
+        // #-learning-code-snippet(5.sleepFrame)
+        // #-learning-code-snippet(6.paddingCard)
     }
 }
 
-struct SleepViewHalf_Previews : PreviewProvider {
+struct SleepViewHalf_Previews: PreviewProvider {
     static var previews: some View {
         SleepViewHalfPreview()
     }

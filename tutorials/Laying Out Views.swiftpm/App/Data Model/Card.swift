@@ -1,11 +1,11 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
-import SwiftUI
 import CoreTransferable
 import Foundation
 import PhotosUI
+import SwiftUI
 
 enum Card: Equatable, CaseIterable, Codable {
     case mood(value: String)
@@ -13,60 +13,61 @@ enum Card: Equatable, CaseIterable, Codable {
     case sketch(value: [Line])
     case text(value: TextData)
     case photo(value: ImageModel)
-    
+
     static var allCases: [Card] {
-        return [.sleep(value: 0), .mood(value: "😁"), .text(value: TextData()), .photo(value: ImageModel()), .sketch(value: [Line]())]}
-    
+        return [.sleep(value: 0), .mood(value: "😁"), .text(value: TextData()), .photo(value: ImageModel()), .sketch(value: [Line]())]
+    }
+
     var id: UUID { UUID() }
-    
+
     var isPhoto: Bool {
         switch self {
-        case .photo(_): return true
+        case .photo: return true
         default: return false
         }
     }
-    
+
     static func title(_ card: Card) -> String {
         switch card {
-        case mood(_):
+        case mood _:
             return "Mood Tracker"
-        case sleep(_):
+        case sleep _:
             return "Sleep Tracker"
-        case sketch(_):
+        case sketch _:
             return "Doodle"
-        case text(_):
+        case text _:
             return "Text Field"
-        case photo(_):
+        case photo _:
             return "Photo"
         }
     }
-    
+
     static func icon(_ card: Card) -> String {
         switch card {
-        case mood(_):
+        case mood _:
             return "face.smiling.fill"
-        case sleep(_):
+        case sleep _:
             return "moon.zzz.fill"
-        case sketch(_):
+        case sketch _:
             return "pencil.tip"
-        case text(_):
+        case text _:
             return "textformat"
-        case photo(_):
+        case photo _:
             return "photo.fill"
         }
     }
-    
+
     static func == (lhs: Card, rhs: Card) -> Bool {
         switch (lhs, rhs) {
-        case (.mood(let valueL), .mood(let valueR)):
+        case let (.mood(valueL), .mood(valueR)):
             return valueL == valueR
-        case (.sleep(let valueL), .sleep(let valueR)):
+        case let (.sleep(valueL), .sleep(valueR)):
             return valueL == valueR
-        case (.sketch(let valueL), .sketch(let valueR)):
+        case let (.sketch(valueL), .sketch(valueR)):
             return valueL == valueR
-        case (.text(let valueL), .text(let valueR)):
+        case let (.text(valueL), .text(valueR)):
             return valueL == valueR
-        case (.photo(let valueL), .photo(let valueR)):
+        case let (.photo(valueL), .photo(valueR)):
             return valueL.url == valueR.url
         default:
             return false
@@ -77,8 +78,8 @@ enum Card: Equatable, CaseIterable, Codable {
 struct CardData: Equatable, Codable {
     var card: Card
     var size: CardSize = .large
-    
-    mutating func updateSize(from newsize: CardSize){
+
+    mutating func updateSize(from newsize: CardSize) {
         size = newsize
     }
 }
@@ -93,13 +94,13 @@ enum ImageState {
 }
 
 struct ImageModel: Codable {
-    
     enum Location: String, Codable {
         case resources, documents
     }
+
     var fileName: String?
     var location = Location.documents
-    
+
     var url: URL? {
         if location == .resources {
             if let jpegImage = Bundle.main.url(forResource: fileName, withExtension: "jpeg") {
@@ -114,12 +115,12 @@ struct ImageModel: Codable {
             let documentDirectory = FileManager.default.documentDirectory
             return documentDirectory.appendingPathComponent(fileName)
         }
-        
     }
 }
+
 struct PhotoFile: Transferable {
     let url: URL
-    
+
     static var transferRepresentation: some TransferRepresentation {
         FileRepresentation(contentType: .image, shouldAttemptToOpenInPlace: false) { data in
             SentTransferredFile(data.url, allowAccessingOriginalFile: true)
@@ -128,7 +129,7 @@ struct PhotoFile: Transferable {
             let fileName = received.file.lastPathComponent
             let destinationURL = tempDirectory.appendingPathComponent(fileName)
             try FileManager.default.copyItem(at: received.file, to: destinationURL)
-            return Self.init(url: destinationURL)
+            return Self(url: destinationURL)
         }
     }
 }
@@ -138,13 +139,14 @@ struct Line: Identifiable, Equatable, Codable {
     var color: Color {
         return Color(rgbaColor)
     }
+
     private var rgbaColor: RGBAColor
     var lineWidth: CGFloat
     var id = UUID()
-    
+
     init(points: [CGPoint], color: Color, lineWidth: CGFloat) {
         self.points = points
-        self.rgbaColor = color.rgbaColor
+        rgbaColor = color.rgbaColor
         self.lineWidth = lineWidth
     }
 }

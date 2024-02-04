@@ -1,13 +1,13 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
 struct MoodViewHalfPreview: View {
     var body: some View {
         Grid {
-            GridRow{
+            GridRow {
                 MoodViewHalf(value: .constant("😁"), isEditing: false, fontStyle: .font1)
                     .modifier(CardStyle())
 
@@ -28,9 +28,9 @@ struct MoodViewFullPreview: View {
 
                 MoodViewFullSolution(value: .constant("😢"), isEditing: false, fontStyle: .font1)
                     .modifier(CardStyle())
-                
+
                 Divider()
-                
+
                 MoodViewFull(value: .constant("😢"), isEditing: true, fontStyle: .font1)
                     .modifier(CardStyle())
 
@@ -45,24 +45,22 @@ struct MoodViewFullPreview: View {
 struct SleepViewHalfPreview: View {
     var body: some View {
         Grid {
-            GridRow{
+            GridRow {
                 SleepViewHalfSolution(value: .constant(5.0), isEditing: false, fontStyle: .font1)
                     .modifier(CardStyle())
 
                 SleepViewHalfSolution(value: .constant(5.0), isEditing: true, fontStyle: .font1)
                     .modifier(CardStyle())
-
             }
 
             Divider()
-            
-            GridRow{
+
+            GridRow {
                 SleepViewHalf(value: .constant(5.0), isEditing: false, fontStyle: .font1)
                     .modifier(CardStyle())
 
                 SleepViewHalf(value: .constant(5.0), isEditing: true, fontStyle: .font1)
                     .modifier(CardStyle())
-
             }
         }
         .padding(.horizontal)
@@ -77,13 +75,12 @@ struct SleepViewFullPreview: View {
 
             SleepViewFull(value: .constant(5.0), isEditing: false, fontStyle: .font1)
                 .modifier(CardStyle())
-
         }
         .padding(.horizontal)
     }
 }
 
-struct ViewSizingSolution : View {
+struct ViewSizingSolution: View {
     var body: some View {
         VStack {
             ZStack {
@@ -134,6 +131,7 @@ struct ViewSizingChallengePreview: View {
         .background(Color.darkBrown)
     }
 }
+
 struct SleepViewHalfSolution: View {
     @Binding var value: Double
     var isEditing: Bool
@@ -146,14 +144,14 @@ struct SleepViewHalfSolution: View {
                 .font(fontStyle.uiFont(15))
                 .frame(maxWidth: .infinity, alignment: isEditing ? .leading : .center)
             Spacer()
-            
+
             Text("\(Int(value))")
                 .modifier(FontStyle(size: 50))
 
             Spacer()
-            
+
             if isEditing {
-                Stepper("Hours Slept", value: $value, in: 0...12, step: 1)
+                Stepper("Hours Slept", value: $value, in: 0 ... 12, step: 1)
                     .labelsHidden()
             }
         }
@@ -168,18 +166,18 @@ struct MoodViewFullSolution: View {
     var fontStyle: JournalFont
     let displayEmojis = 3
     private let emojis = ["😢", "😴", "😁", "😡", "😐"]
-    
+
     var body: some View {
         VStack {
             Text(isEditing ? "What's your mood?" : "Mood")
                 .foregroundColor(.darkBrown)
                 .font(fontStyle.uiFont(15))
                 .frame(maxWidth: .infinity, alignment: isEditing ? .leading : .center)
-            
+
             HStack {
                 if isEditing {
                     ForEach(emojis, id: \.self) { emoji in
-                        Button{
+                        Button {
                             value = emoji
                         } label: {
                             VStack {
@@ -187,7 +185,7 @@ struct MoodViewFullSolution: View {
                                     .font(.system(size: 35))
                                     .frame(maxWidth: .infinity, alignment: .center)
                                     .padding(.bottom)
-                                
+
                                 Image(systemName: value == emoji ? "circle.fill" : "circle")
                                     .font(.system(size: 16))
                                     .foregroundColor(.darkBrown)
@@ -195,7 +193,7 @@ struct MoodViewFullSolution: View {
                         }
                     }
                 } else {
-                    ForEach(0..<displayEmojis, id:\.self) { index in
+                    ForEach(0 ..< displayEmojis, id: \.self) { _ in
                         Text(value)
                             .font(.system(size: 50))
                             .frame(maxWidth: .infinity, alignment: .center)
@@ -203,14 +201,13 @@ struct MoodViewFullSolution: View {
                 }
             }
             .frame(maxHeight: .infinity, alignment: .center)
-            
         }
         .frame(minHeight: 100, maxHeight: 200)
         .padding()
     }
 }
 
-struct YourTitleBannerSolutionView : View {
+struct YourTitleBannerSolutionView: View {
     var body: some View {
         HStack {
             VStack {
@@ -221,13 +218,13 @@ struct YourTitleBannerSolutionView : View {
                     Circle()
                         .frame(width: 15)
                         .foregroundColor(.bannerYellow)
-                        .offset(x:-10, y:-5)
+                        .offset(x: -10, y: -5)
                 }
                 ZStack {
                     Circle()
                         .frame(width: 30)
                         .foregroundColor(.bannerPink)
-                        .offset(x:-5)
+                        .offset(x: -5)
                     Circle()
                         .frame(width: 20)
                         .foregroundColor(.bannerOrange)
@@ -236,15 +233,15 @@ struct YourTitleBannerSolutionView : View {
             }
             Spacer()
             ZStack {
-                 Circle()
-                     .frame(width: 40)
-                     .foregroundColor(.bannerBlue)
-                     .offset(x: 5, y:-10)
+                Circle()
+                    .frame(width: 40)
+                    .foregroundColor(.bannerBlue)
+                    .offset(x: 5, y: -10)
                 Circle()
                     .frame(width: 30)
                     .foregroundColor(.bannerPink)
                     .offset(x: 6, y: 5)
-                
+
                 Circle()
                     .frame(width: 18)
                     .foregroundColor(.bannerOrange)

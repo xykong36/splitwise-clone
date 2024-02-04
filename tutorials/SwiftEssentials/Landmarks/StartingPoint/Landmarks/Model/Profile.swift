@@ -1,9 +1,9 @@
 /*
-See the LICENSE.txt file for this sample’s licensing information.
+ See the LICENSE.txt file for this sample’s licensing information.
 
-Abstract:
-A representation of user profile data.
-*/
+ Abstract:
+ A representation of user profile data.
+ */
 
 import Foundation
 

@@ -1,11 +1,10 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
 struct StoryView: View {
-
     var body: some View {
         NavigationStack {
             StoryPageView(story: story, pageIndex: 0)

@@ -1,12 +1,12 @@
 /*
-See the LICENSE.txt file for this sample’s licensing information.
+ See the LICENSE.txt file for this sample’s licensing information.
 
-Abstract:
-A view that presents a map.
-*/
+ Abstract:
+ A view that presents a map.
+ */
 
-import SwiftUI
 import MapKit
+import SwiftUI
 
 struct MapView: View {
     var body: some View {

@@ -1,12 +1,12 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
 struct MemeCreator: View, Sendable {
     @EnvironmentObject var fetcher: PandaCollectionFetcher
-    
+
     @State private var memeText = ""
     @State private var textSize = 60.0
     @State private var textColor = Color.white
@@ -33,15 +33,15 @@ struct MemeCreator: View, Sendable {
                 .frame(minHeight: 150)
 
             Spacer()
-            
+
             if !memeText.isEmpty {
                 VStack {
                     HStack {
                         Text("Font Size")
                             .fontWeight(.semibold)
-                        Slider(value: $textSize, in: 20...140)
+                        Slider(value: $textSize, in: 20 ... 140)
                     }
-                    
+
                     HStack {
                         Text("Font Color")
                             .fontWeight(.semibold)
@@ -53,7 +53,6 @@ struct MemeCreator: View, Sendable {
                 }
                 .padding(.vertical)
                 .frame(maxWidth: 325)
-                
             }
 
             HStack {

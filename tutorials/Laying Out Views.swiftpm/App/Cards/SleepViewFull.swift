@@ -1,6 +1,6 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
@@ -9,7 +9,6 @@ struct SleepViewFull: View {
     var isEditing: Bool
     var fontStyle: JournalFont
 
-
     var body: some View {
         VStack(alignment: .leading) {
             Text(isEditing ? "How many hours did you sleep?" : "Hours Slept: \(Int(value))")
@@ -17,12 +16,12 @@ struct SleepViewFull: View {
                 .font(fontStyle.uiFont(15))
 
             if isEditing {
-                HStack (spacing: 10) {
+                HStack(spacing: 10) {
                     Text("\(Int(value))")
                         .foregroundColor(.darkBrown)
 
                     ZStack(alignment: .center) {
-                        Slider(value: $value, in: 0...12, step: 1)
+                        Slider(value: $value, in: 0 ... 12, step: 1)
                             .padding(.horizontal)
                             .accentColor(Color(UIColor.systemTeal))
                     }
@@ -30,24 +29,24 @@ struct SleepViewFull: View {
                         .foregroundColor(.darkBrown)
                 }
                 .frame(maxHeight: .infinity)
-                
+
             } else {
                 HStack {
                     Image(systemName: "moon.zzz.fill")
                         .foregroundColor(.darkBrown)
                         .font(.system(size: 30))
-                    Grid (horizontalSpacing: 0) {
+                    Grid(horizontalSpacing: 0) {
                         GridRow {
-                           ForEach(0..<12) { column in
-                               Rectangle()
-                                   .frame(height: 15)
-                                   .foregroundColor( column < Int(value) ? .themeBlue: .darkBrown.opacity(0.5))
-                           }
+                            ForEach(0 ..< 12) { column in
+                                Rectangle()
+                                    .frame(height: 15)
+                                    .foregroundColor(column < Int(value) ? .themeBlue : .darkBrown.opacity(0.5))
+                            }
                         }
                     }
                     .cornerRadius(45.0)
                 }
-                .frame(maxWidth: .infinity,maxHeight: .infinity)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
         .frame(minHeight: 100, maxHeight: 300)
@@ -55,7 +54,7 @@ struct SleepViewFull: View {
     }
 }
 
-struct SleepViewFull_Previews : PreviewProvider {
+struct SleepViewFull_Previews: PreviewProvider {
     static var previews: some View {
         SleepViewFullPreview()
     }

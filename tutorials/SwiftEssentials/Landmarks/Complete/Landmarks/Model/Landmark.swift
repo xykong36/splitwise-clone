@@ -1,13 +1,13 @@
 /*
-See the LICENSE.txt file for this sample’s licensing information.
+ See the LICENSE.txt file for this sample’s licensing information.
 
-Abstract:
-A representation of a single landmark.
-*/
+ Abstract:
+ A representation of a single landmark.
+ */
 
+import CoreLocation
 import Foundation
 import SwiftUI
-import CoreLocation
 
 struct Landmark: Hashable, Codable, Identifiable {
     var id: Int
@@ -29,6 +29,7 @@ struct Landmark: Hashable, Codable, Identifiable {
     var image: Image {
         Image(imageName)
     }
+
     var featureImage: Image? {
         isFeatured ? Image(imageName + "_feature") : nil
     }
@@ -37,7 +38,8 @@ struct Landmark: Hashable, Codable, Identifiable {
     var locationCoordinate: CLLocationCoordinate2D {
         CLLocationCoordinate2D(
             latitude: coordinates.latitude,
-            longitude: coordinates.longitude)
+            longitude: coordinates.longitude
+        )
     }
 
     struct Coordinates: Hashable, Codable {

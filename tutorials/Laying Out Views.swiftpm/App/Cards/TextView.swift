@@ -1,6 +1,6 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
@@ -13,7 +13,7 @@ struct TextView: View {
     var containsPlaceHolderText: Bool {
         value.text == placeHolderText
     }
-    
+
     var body: some View {
         VStack(alignment: .leading) {
             if isEditing {
@@ -48,8 +48,8 @@ struct TextView: View {
                         }
                     }
                 }
-                .frame(maxWidth: .infinity,  alignment: .center)
-                
+                .frame(maxWidth: .infinity, alignment: .center)
+
             } else {
                 Text(value.text)
                     .font(fontStyle.uiFont(value.fontSize.rawValue))
@@ -65,13 +65,11 @@ struct TextView: View {
             UITextView.appearance().backgroundColor = .clear
         }
     }
-    
 }
 
-struct TextView_Previews : PreviewProvider {
+struct TextView_Previews: PreviewProvider {
     static var previews: some View {
         TextView(value: .constant(TextData()), isEditing: true)
             .background(CardBackground())
     }
 }
-

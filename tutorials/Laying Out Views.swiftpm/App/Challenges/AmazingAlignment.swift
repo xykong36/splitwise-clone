@@ -1,6 +1,6 @@
-///*
-//See the License.txt file for this sample’s licensing information.
-//*/
+/// *
+// See the License.txt file for this sample’s licensing information.
+// */
 
 import SwiftUI
 
@@ -11,11 +11,11 @@ struct AmazingAlignment: View {
                 .font(.system(size: 40))
             Rectangle()
                 .frame(maxWidth: .infinity, maxHeight: 10)
-            VStack (alignment: .trailing){
+            VStack(alignment: .trailing) {
                 // 这里是直接套娃了 在VStack当中嵌套VStack
                 Image(systemName: "books.vertical.fill")
                     .font(.system(size: 40))
-                    
+
                 Rectangle()
                     .frame(maxWidth: .infinity, maxHeight: 10)
             }
@@ -42,7 +42,6 @@ struct AmazingAlignment: View {
         .border(Color.black)
     }
 }
-
 
 struct AmazingAlignment_Previews: PreviewProvider {
     static var previews: some View {

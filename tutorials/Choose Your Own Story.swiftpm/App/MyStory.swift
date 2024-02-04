@@ -1,6 +1,6 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
@@ -9,9 +9,9 @@ let story = Story(pages: [
         """
         Welcome to Choose Your Own Story
         🥖🍪Bake Off!🥐🍰
-        
+
         You enter a local baking competition at the county fair 🎪. It’s a beautiful summer day and you are excited! When you enter the room, you look around to see ten identical stations.
-        
+
         Each station is stocked with bowls of different sizes, spatulas, spoons, and a standing mixer. You are the third to arrive, so there are many stations still available. Where do you sit?
         """,
         choices: [
@@ -112,7 +112,7 @@ let story = Story(pages: [
     StoryPage( // 10
         """
         When you head to the decorations table to get some candy, you find red, orange, yellow, green, and purple candies, but no blue or indigo! Someone making a troll cake has used all the blue-colored candies. You come in a respectable 4th place, despite your five color rainbow.
-        
+
         😢 Try again.
         """,
         choices: []
@@ -120,7 +120,7 @@ let story = Story(pages: [
     StoryPage( // 11
         """
         The judges say you overbaked your cake and your marshmallow clouds fall flat. You come in 7th place.
-        
+
         😢 Try again.
         """,
         choices: []
@@ -128,7 +128,7 @@ let story = Story(pages: [
     StoryPage( // 12
         """
         Now that the judges have moved on, you are able to get going on your decorations. You start by making all the marzipan figurines. Things are looking pretty good until...you SNEEZE! 🤧🦠 The spray goes everywhere and you have to restart your decorations. In the end, you run out of time and come in 8th place.
-        
+
         😢 Try again.
         """,
         choices: []
@@ -136,7 +136,7 @@ let story = Story(pages: [
     StoryPage( // 13
         """
         The judges come by to ask about your cake. They keep prying for more, and can’t understand why you are only using piped icing. After a short time, you realize you have missed a HUGE part of the directions. You complete the challenge and go home in last place.
-        
+
         😢 Try again.
         """,
         choices: []
@@ -144,7 +144,7 @@ let story = Story(pages: [
     StoryPage( // 14
         """
         Your cake is coming together nicely when a dog bursts into the tent! He runs through, toppling over a tray of your piped decorations. You run out of time to remake them and come in 9th place.
-        
+
         😢 Try again.
         """,
 
@@ -153,7 +153,7 @@ let story = Story(pages: [
     StoryPage( // 15
         """
         Your rainbow turns out magnificent! The arch is sky high and it impresses the judges. You win 2nd place.🥈
-        
+
         🎉💵You are a cash prize winner!💵🥳
         """,
         choices: []
@@ -161,7 +161,7 @@ let story = Story(pages: [
     StoryPage( // 16
         """
         Right before you get to your neighbors bench, you trip on a power cord and knock over their sponge cake! There is no time for them to start over. They are devastated and you decide to disqualify yourself out of solidarity.
-        
+
         😢 Try again.
         """,
         choices: []
@@ -169,7 +169,7 @@ let story = Story(pages: [
     StoryPage( // 17
         """
         Good thinking! You can complete most of your decorations while your cake continues to cool. You work hard and, before you know it, the competition is over and your cake looks spectacular. You come in 3rd place!🥉
-        
+
         🎉💵You are a cash prize winner!💵🥳
         """,
         choices: []
@@ -177,7 +177,7 @@ let story = Story(pages: [
     StoryPage( // 18
         """
         Oh no, you should have waited! All your frosting melts off the sides and your decorations are a disaster. Luckily your cake perfectly baked. The judges are pretty harsh about your decorations and you finish in 6th place.
-        
+
         😢 Try again.
         """,
         choices: []
@@ -185,7 +185,7 @@ let story = Story(pages: [
     StoryPage( // 19
         """
         The judges love your theme and the 3D elements really make it come alive! They compliment you on your mix of chocolate and marzipan. You win 1st place! 🎉🎂🥇
-        
+
         🎉💵You are a cash prize winner!💵🥳
         """,
         choices: []
@@ -193,7 +193,7 @@ let story = Story(pages: [
     StoryPage( // 20
         """
         The judges compliment your theme, but the icing is too thick and overpowers the delicate cake. You come in 5th place.
-        
+
         😢 Try again.
         """,
         choices: []
