@@ -6,9 +6,9 @@ final class AuthenticationViewModel: ObservableObject {
   /// The user's log in status.
   /// - note: This will publish updates when its value changes.
   @Published var state: State
-//  private var authenticator: GoogleSignInAuthenticator {
-//    return GoogleSignInAuthenticator(authViewModel: self)
-//  }
+  private var authenticator: GoogleSignInAuthenticator {
+    return GoogleSignInAuthenticator(authViewModel: self)
+  }
   /// The user-authorized scopes.
   /// - note: If the user is logged out, then this will default to empty.
   var authorizedScopes: [String] {
@@ -34,15 +34,15 @@ final class AuthenticationViewModel: ObservableObject {
 //    authenticator.signIn()
 //  }
 //
-//  /// Signs the user out.
-//  func signOut() {
-//    authenticator.signOut()
-//  }
-//
-//  /// Disconnects the previously granted scope and logs the user out.
-//  func disconnect() {
-//    authenticator.disconnect()
-//  }
+  /// Signs the user out.
+  func signOut() {
+    authenticator.signOut()
+  }
+
+  /// Disconnects the previously granted scope and logs the user out.
+  func disconnect() {
+    authenticator.disconnect()
+  }
 
 }
 

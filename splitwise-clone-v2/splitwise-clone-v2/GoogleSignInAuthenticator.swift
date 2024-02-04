@@ -19,8 +19,6 @@ final class GoogleSignInAuthenticator: ObservableObject {
     self.authViewModel = authViewModel
   }
 //
-//  
-//
 //    /// Signs in the user based upon the selected account.
 //    /// - note: Successful calls to this will set the `authViewModel`'s `state` property.
 //    func signIn() {
@@ -51,19 +49,19 @@ final class GoogleSignInAuthenticator: ObservableObject {
 //    }
 //
 //
-//  /// Signs out the current user.
-//  func signOut() {
-//    GIDSignIn.sharedInstance.signOut()
-//    authViewModel.state = .signedOut
-//  }
-//
-//  /// Disconnects the previously granted scope and signs the user out.
-//  func disconnect() {
-//    GIDSignIn.sharedInstance.disconnect { error in
-//      if let error = error {
-//        print("Encountered error disconnecting scope: \(error).")
-//      }
-//      self.signOut()
-//    }
-//  }
+  /// Signs out the current user.
+  func signOut() {
+    GIDSignIn.sharedInstance.signOut()
+    authViewModel.state = .signedOut
+  }
+
+  /// Disconnects the previously granted scope and signs the user out.
+  func disconnect() {
+    GIDSignIn.sharedInstance.disconnect { error in
+      if let error = error {
+        print("Encountered error disconnecting scope: \(error).")
+      }
+      self.signOut()
+    }
+  }
 }
