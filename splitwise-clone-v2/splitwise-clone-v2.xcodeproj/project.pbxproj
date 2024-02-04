@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22212CE12B6F2739009735BB /* GoogleSignInAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22212CE02B6F2739009735BB /* GoogleSignInAuthenticator.swift */; };
+		22212CE32B6F2801009735BB /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22212CE22B6F2801009735BB /* AuthenticationViewModel.swift */; };
 		227A63EE2B6EDCDA003845A1 /* splitwise_clone_v2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227A63ED2B6EDCDA003845A1 /* splitwise_clone_v2App.swift */; };
 		227A63F02B6EDCDA003845A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227A63EF2B6EDCDA003845A1 /* ContentView.swift */; };
 		227A63F22B6EDCDB003845A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 227A63F12B6EDCDB003845A1 /* Assets.xcassets */; };
@@ -51,6 +53,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22212CE02B6F2739009735BB /* GoogleSignInAuthenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInAuthenticator.swift; sourceTree = "<group>"; };
+		22212CE22B6F2801009735BB /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		227A63EA2B6EDCDA003845A1 /* splitwise-clone-v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "splitwise-clone-v2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		227A63ED2B6EDCDA003845A1 /* splitwise_clone_v2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = splitwise_clone_v2App.swift; sourceTree = "<group>"; };
 		227A63EF2B6EDCDA003845A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 				227A63F32B6EDCDB003845A1 /* Preview Content */,
 				227A63FB2B6EDD16003845A1 /* LoginView.swift */,
 				227A63FD2B6EDD34003845A1 /* AddItemView.swift */,
+				22212CE02B6F2739009735BB /* GoogleSignInAuthenticator.swift */,
+				22212CE22B6F2801009735BB /* AuthenticationViewModel.swift */,
 			);
 			path = "splitwise-clone-v2";
 			sourceTree = "<group>";
@@ -258,9 +264,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22212CE32B6F2801009735BB /* AuthenticationViewModel.swift in Sources */,
 				227A63FC2B6EDD16003845A1 /* LoginView.swift in Sources */,
 				227A63F02B6EDCDA003845A1 /* ContentView.swift in Sources */,
 				227A63EE2B6EDCDA003845A1 /* splitwise_clone_v2App.swift in Sources */,
+				22212CE12B6F2739009735BB /* GoogleSignInAuthenticator.swift in Sources */,
 				227A63FE2B6EDD34003845A1 /* AddItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
