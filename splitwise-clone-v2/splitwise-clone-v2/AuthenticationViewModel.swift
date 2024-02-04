@@ -9,6 +9,7 @@ final class AuthenticationViewModel: ObservableObject {
   private var authenticator: GoogleSignInAuthenticator {
     return GoogleSignInAuthenticator(authViewModel: self)
   }
+    
   /// The user-authorized scopes.
   /// - note: If the user is logged out, then this will default to empty.
   var authorizedScopes: [String] {
@@ -29,11 +30,11 @@ final class AuthenticationViewModel: ObservableObject {
     }
   }
 
-//  /// Signs the user in.
-//  func signIn() {
-//    authenticator.signIn()
-//  }
-//
+  /// Signs the user in.
+  func signIn() {
+    authenticator.signIn()
+  }
+
   /// Signs the user out.
   func signOut() {
     authenticator.signOut()

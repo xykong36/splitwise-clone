@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var authViewModel: AuthenticationViewModel
+    
     var body: some View {
         TabView {
             AddItemView()
