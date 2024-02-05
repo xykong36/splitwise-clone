@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct AddItemView: View {
-    
     @ObservedObject var purchaseData: PurchaseData
-    
+
     // DateFormatter for formatting the date
-        private let dateFormatter: DateFormatter = {
-            let formatter = DateFormatter()
-            formatter.dateStyle = .short
-            return formatter
-        }()
+    private let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        return formatter
+    }()
 
     var body: some View {
         NavigationView {
@@ -33,7 +32,7 @@ struct AddItemView: View {
                 .navigationBarTitle("My Expense")
 
                 Spacer()
-                
+
                 HStack {
                     Spacer()
                     NavigationLink(destination: NewEntryView(purchaseData: purchaseData)) {
@@ -43,19 +42,17 @@ struct AddItemView: View {
                             .padding()
                     }
                 }
-                
             }
         }
     }
 }
 
-
 struct NewEntryView: View {
-    
     @ObservedObject var purchaseData: PurchaseData
+
     @State private var newEntry = Entry(title: "", amount: 0, date: Date(), members: [])
     @State private var selectedDate = Date()
-    
+
     // Number formatter for currency input
     private let currencyFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -67,7 +64,7 @@ struct NewEntryView: View {
         Form {
             Section(header: Text("New Entry")) {
                 TextField("Title", text: $newEntry.title)
-                
+
                 TextField("Amount", value: $newEntry.amount, formatter: currencyFormatter)
                     .keyboardType(.decimalPad)
                 
@@ -92,7 +89,7 @@ struct NewEntryView: View {
                     newEntry.members.append(Member(count: newEntry.members.count + 1, names: [""]))
                 }
             }
-            
+
             Button("Save") {
                 newEntry.date = selectedDate
                 // Remove members with empty names before saving

@@ -21,7 +21,7 @@ struct EntryDetailView: View {
         formatter.numberStyle = .currency
         return formatter
     }()
-    
+
     var body: some View {
         VStack {
             Text("Title: \(entry.title)")

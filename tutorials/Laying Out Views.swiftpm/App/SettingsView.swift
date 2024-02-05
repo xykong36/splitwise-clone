@@ -1,16 +1,16 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
 struct SettingsView: View {
     @Binding var entry: Entry
     @Binding var showingSheet: Bool
-    
+
     var body: some View {
         ScrollView {
-            VStack (alignment: .leading, spacing: 10) {
+            VStack(alignment: .leading, spacing: 10) {
                 Text("Font")
                     .modifier(FontStyle(size: 20))
                     .padding(.top)
@@ -20,7 +20,7 @@ struct SettingsView: View {
                 Text("Theme")
                     .modifier(FontStyle(size: 20))
                     .padding(.top)
-                Grid (horizontalSpacing: 5, verticalSpacing: 10){
+                Grid(horizontalSpacing: 5, verticalSpacing: 10) {
                     GridRow {
                         getBackgroundButton(theme: .line)
                         getBackgroundButton(theme: .curve)
@@ -47,19 +47,19 @@ struct SettingsView: View {
         }
         .background(Color.paleOrange)
     }
-    
+
     @ViewBuilder
     func getBackgroundButton(theme: JournalTheme) -> some View {
         Button {
             entry.theme = theme
         } label: {
-            VStack (spacing: 5){
+            VStack(spacing: 5) {
                 BackgroundIcon(forTheme: theme)
                     .scaledToFill()
                     .cornerRadius(10.0)
                     .shadow(color: Color.shadow, radius: 4)
                     .padding(5)
-                
+
                 Image(systemName: entry.theme == theme ? "circle.fill" : "circle")
                     .font(.callout)
             }
@@ -67,9 +67,8 @@ struct SettingsView: View {
     }
 }
 
-struct SettingsView_Previews : PreviewProvider {
+struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView(entry: .constant(Entry()), showingSheet: .constant(true))
     }
 }
-

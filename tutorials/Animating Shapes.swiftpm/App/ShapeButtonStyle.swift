@@ -1,6 +1,6 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
@@ -18,28 +18,26 @@ struct ShapesButton: ButtonStyle {
 
 struct PlayResetButton: View {
     @Binding var animating: Bool
-    var resetOnly : Bool = false
-    var action: () -> Void = { }
-     
-    init(animating: Binding<Bool>, resetOnly: Bool = false, action: @escaping () -> Void = {}){
-        self._animating = animating
+    var resetOnly: Bool = false
+    var action: () -> Void = {}
+
+    init(animating: Binding<Bool>, resetOnly: Bool = false, action: @escaping () -> Void = {}) {
+        _animating = animating
         self.resetOnly = resetOnly
         self.action = action
-     }
+    }
 
     var body: some View {
-        Button() {
+        Button {
             animating.toggle()
             action()
         } label: {
             if resetOnly {
                 Label("Reset", systemImage: "arrow.counterclockwise")
             } else {
-                Label(animating ? "Reset": "Play", systemImage: animating ? "arrow.counterclockwise" : "play.fill")
+                Label(animating ? "Reset" : "Play", systemImage: animating ? "arrow.counterclockwise" : "play.fill")
             }
-           
         }
         .buttonStyle(ShapesButton())
-        
     }
 }

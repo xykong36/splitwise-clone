@@ -6,18 +6,16 @@
 //
 
 import SwiftUI
+
 class PurchaseData: ObservableObject {
-    
     @Published var entries: [Entry] = [
         Entry(
             title: "Midwood BBQ",
-            amount: 10 ,
+            amount: 10,
             members:
-                [
-                Member(count: 2, names: ["Xiangyu", "Steven"])
-                ]
-        )
+            [
+                Member(count: 2, names: ["Xiangyu", "Steven"]),
+            ]
+        ),
     ]
-    
 }
-

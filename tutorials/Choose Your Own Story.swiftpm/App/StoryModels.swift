@@ -1,10 +1,8 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
-
+ See the License.txt file for this sample’s licensing information.
+ */
 
 struct Story {
-    
     let pages: [StoryPage]
 
     subscript(_ pageIndex: Int) -> StoryPage {
@@ -14,9 +12,9 @@ struct Story {
 
 struct StoryPage {
     let text: String
-    
+
     let choices: [Choice]
-    
+
     init(_ text: String, choices: [Choice]) {
         self.text = text
         self.choices = choices

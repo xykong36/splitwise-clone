@@ -1,11 +1,10 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
 struct StoryPageView: View {
-
     let story: Story
     let pageIndex: Int
 
@@ -14,7 +13,7 @@ struct StoryPageView: View {
             ScrollView {
                 Text(story[pageIndex].text)
             }
-            
+
             ForEach(story[pageIndex].choices, id: \Choice.text) { choice in
                 NavigationLink(destination: StoryPageView(story: story, pageIndex: choice.destination)) {
                     Text(choice.text)

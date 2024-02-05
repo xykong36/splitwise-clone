@@ -13,7 +13,7 @@ struct Entry: Identifiable, Equatable {
     var amount: Int
     var date: Date
     var members: [Member]
-    
+
     init(title: String = "", amount: Int, date: Date = Date(), members: [Member] = []) {
         self.title = title
         self.amount = amount

@@ -1,10 +1,9 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
-
-import SwiftUI
 import PhotosUI
+import SwiftUI
 
 struct PhotoView: View {
     @Binding var value: ImageModel
@@ -12,14 +11,14 @@ struct PhotoView: View {
     @State private var imageSelection: PhotosPickerItem?
     var isEditing: Bool
     var fontStyle: JournalFont
-    
+
     var body: some View {
         ZStack {
             Group {
                 RoundedRectangle(cornerRadius: 10)
                     .frame(minHeight: 100, maxHeight: 200)
                     .foregroundColor(.clear)
-                
+
                 Image(systemName: "photo.fill")
                     .foregroundColor(.darkBrown)
                     .font(.system(size: 30))
@@ -40,7 +39,7 @@ struct PhotoView: View {
                     initializeImageState()
                 }
             }
-            
+
             if !isEditing, let url = value.url {
                 AsyncImage(url: url) { image in
                     image
@@ -51,7 +50,6 @@ struct PhotoView: View {
                     Text("Loading Image...")
                         .modifier(FontStyle(size: 12))
                 }
-                
             }
             Image(systemName: "photo.fill")
                 .foregroundColor(.white)
@@ -62,11 +60,11 @@ struct PhotoView: View {
         }
         .clipShape(RoundedRectangle(cornerRadius: 10))
     }
-    
+
     @ViewBuilder
     private func getImg(imageState: ImageState) -> some View {
         switch imageState {
-        case .success(let url):
+        case let .success(url):
             AsyncImage(url: url) { image in
                 image
                     .resizable()
@@ -80,34 +78,35 @@ struct PhotoView: View {
         case .empty:
             Image(systemName: "plus")
                 .font(.system(size: 30))
-        case .failure(_):
+        case .failure:
             Image("errorloadingimage")
                 .resizable()
                 .scaledToFit()
                 .frame(height: 35)
         }
     }
-    
+
     private func initializeImageState() {
         if let url = value.url {
             imageState = .success(url)
         }
     }
-    
+
     private func updateImageState(newItem: PhotosPickerItem?) {
         Task {
             do {
                 imageState = .loading
                 guard let photoFile = try await newItem?.loadTransferable(type: PhotoFile.self),
-                      let url = try FileManager.default.copyItemToDocumentDirectory(from: photoFile.url) else {
-                     imageState = .empty
-                     return
-                 }
+                      let url = try FileManager.default.copyItemToDocumentDirectory(from: photoFile.url)
+                else {
+                    imageState = .empty
+                    return
+                }
                 print("image saved to: \(url)")
                 value.fileName = url.lastPathComponent
                 print("image file name: \(url.lastPathComponent)")
                 imageState = .success(url)
-                
+
             } catch {
                 print("Image download failed with error \(error.localizedDescription)")
                 imageState = .failure(error)
@@ -116,12 +115,9 @@ struct PhotoView: View {
     }
 }
 
-struct PhotoView_Previews : PreviewProvider {
+struct PhotoView_Previews: PreviewProvider {
     static var previews: some View {
         PhotoView(value: .constant(ImageModel()), isEditing: true, fontStyle: .font1)
             .background(CardBackground())
     }
 }
-
-
-

@@ -1,6 +1,6 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
@@ -10,14 +10,13 @@ struct MoodViewFull: View {
     var fontStyle: JournalFont
     let displayEmojis = 3
     private let emojis = ["😢", "😴", "😁", "😡", "😐"]
-    
+
     var body: some View {
         VStack {
             Text(isEditing ? "What's your mood?" : "Mood")
                 .foregroundColor(.darkBrown)
                 .font(fontStyle.uiFont(15))
                 .frame(maxWidth: .infinity, alignment: isEditing ? .leading : .center)
-
 
             HStack {
                 if isEditing {
@@ -37,7 +36,7 @@ struct MoodViewFull: View {
                         }
                     }
                 } else {
-                    ForEach(0..<displayEmojis, id:\.self) { index in
+                    ForEach(0 ..< displayEmojis, id: \.self) { _ in
                         Text(value)
                             .font(.system(size: 50))
                             .frame(maxWidth: .infinity, alignment: .center)
@@ -51,7 +50,7 @@ struct MoodViewFull: View {
     }
 }
 
-struct MoodViewFull_Previews : PreviewProvider {
+struct MoodViewFull_Previews: PreviewProvider {
     static var previews: some View {
         MoodViewFullPreview()
     }

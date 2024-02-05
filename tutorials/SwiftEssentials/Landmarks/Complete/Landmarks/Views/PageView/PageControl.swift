@@ -1,9 +1,9 @@
 /*
-See the LICENSE.txt file for this sample’s licensing information.
+ See the LICENSE.txt file for this sample’s licensing information.
 
-Abstract:
-A view wrapping a UIPageControl.
-*/
+ Abstract:
+ A view wrapping a UIPageControl.
+ */
 
 import SwiftUI
 import UIKit
@@ -22,12 +22,13 @@ struct PageControl: UIViewRepresentable {
         control.addTarget(
             context.coordinator,
             action: #selector(Coordinator.updateCurrentPage(sender:)),
-            for: .valueChanged)
+            for: .valueChanged
+        )
 
         return control
     }
 
-    func updateUIView(_ uiView: UIPageControl, context: Context) {
+    func updateUIView(_ uiView: UIPageControl, context _: Context) {
         uiView.currentPage = currentPage
     }
 
