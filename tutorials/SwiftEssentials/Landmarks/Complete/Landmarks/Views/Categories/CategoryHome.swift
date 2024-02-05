@@ -1,9 +1,9 @@
 /*
-See the LICENSE.txt file for this sample’s licensing information.
+ See the LICENSE.txt file for this sample’s licensing information.
 
-Abstract:
-A view showing featured landmarks above a list of landmarks grouped by category.
-*/
+ Abstract:
+ A view showing featured landmarks above a list of landmarks grouped by category.
+ */
 
 import SwiftUI
 
@@ -16,7 +16,7 @@ struct CategoryHome: View {
             List {
                 PageView(pages: modelData.features.map { FeatureCard(landmark: $0) })
                     .listRowInsets(EdgeInsets())
-                
+
                 ForEach(modelData.categories.keys.sorted(), id: \.self) { key in
                     CategoryRow(categoryName: key, items: modelData.categories[key]!)
                 }

@@ -1,19 +1,18 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
-import SwiftUI
 import PhotosUI
+import SwiftUI
 
 struct PhotoPicker: UIViewControllerRepresentable {
     @EnvironmentObject var dataModel: DataModel
-    
+
     /// A dismiss action provided by the environment. This may be called to dismiss this view controller.
     @Environment(\.dismiss) var dismiss
-    
+
     /// Creates the picker view controller that this object represents.
     func makeUIViewController(context: UIViewControllerRepresentableContext<PhotoPicker>) -> PHPickerViewController {
-        
         // Configure the picker.
         var configuration = PHPickerConfiguration(photoLibrary: PHPhotoLibrary.shared())
         // Limit to images.
@@ -25,32 +24,31 @@ struct PhotoPicker: UIViewControllerRepresentable {
         photoPickerViewController.delegate = context.coordinator
         return photoPickerViewController
     }
-    
+
     /// Creates the coordinator that allows the picker to communicate back to this object.
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
 
     /// Updates the picker while it’s being presented.
-    func updateUIViewController(_ uiViewController: PHPickerViewController, context: UIViewControllerRepresentableContext<PhotoPicker>) {
+    func updateUIViewController(_: PHPickerViewController, context _: UIViewControllerRepresentableContext<PhotoPicker>) {
         // No updates are necessary.
     }
 }
 
 class Coordinator: NSObject, UINavigationControllerDelegate, PHPickerViewControllerDelegate {
     let parent: PhotoPicker
-    
+
     /// Called when one or more items have been picked, or when the picker has been canceled.
-    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-        
+    func picker(_: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         // Dismisss the presented picker.
-        self.parent.dismiss()
-        
+        parent.dismiss()
+
         guard
             let result = results.first,
             result.itemProvider.hasItemConformingToTypeIdentifier(UTType.image.identifier)
         else { return }
-        
+
         // Load a file representation of the picked item.
         // This creates a temporary file which is then copied to the app’s document directory for persistent storage.
         result.itemProvider.loadFileRepresentation(forTypeIdentifier: UTType.image.identifier) { url, error in
@@ -69,7 +67,7 @@ class Coordinator: NSObject, UINavigationControllerDelegate, PHPickerViewControl
             }
         }
     }
-    
+
     init(_ parent: PhotoPicker) {
         self.parent = parent
     }

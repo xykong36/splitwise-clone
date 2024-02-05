@@ -1,16 +1,16 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
+
 struct SleepView: View {
     @Binding var value: Double
     var isEditing: Bool
     var fontStyle: JournalFont
     var size: CardSize
-    
-    static var disableSleepViewHalf = false
 
+    static var disableSleepViewHalf = false
 
     var body: some View {
         if size == .small {
@@ -20,5 +20,3 @@ struct SleepView: View {
         }
     }
 }
-
-

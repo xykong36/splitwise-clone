@@ -1,6 +1,6 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
@@ -11,19 +11,19 @@ struct SketchView: View {
 
     var size: CardSize
     @State private var penColor = Color.darkBrown
-    
+
     private var penColors: [Color] {
         if size == .small {
             return [Color.darkBrown]
         } else {
             return
-               [.themePink,
-                .themeRed,
-                .themeOrange,
-                .themeGreen,
-                .themeBlue,
-                .themeTeal,
-                .darkBrown]
+                [.themePink,
+                 .themeRed,
+                 .themeOrange,
+                 .themeGreen,
+                 .themeBlue,
+                 .themeTeal,
+                 .darkBrown]
         }
     }
 
@@ -35,8 +35,8 @@ struct SketchView: View {
                         .foregroundColor(.darkBrown)
                         .font(fontStyle.uiFont(15))
                 }
-            
-                Canvas { context, size in
+
+                Canvas { context, _ in
                     for line in value {
                         var path = Path()
                         path.addLines(line.points)
@@ -44,7 +44,7 @@ struct SketchView: View {
                     }
                 }
                 .frame(minHeight: size == .small ? 100 : 250, maxHeight: 250)
-                .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local).onChanged({ line in
+                .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local).onChanged { line in
                     let newPoint = line.location
                     if line.translation.width + line.translation.height == 0 {
                         value.append(Line(points: [newPoint], color: penColor, lineWidth: 5))
@@ -52,12 +52,12 @@ struct SketchView: View {
                         let index = value.count - 1
                         value[index].points.append(newPoint)
                     }
-                }))
+                })
                 .disabled(!isEditing)
-                
+
                 if isEditing {
                     HStack {
-                        ForEach(penColors, id:\.self) { color in
+                        ForEach(penColors, id: \.self) { color in
                             Button {
                                 penColor = color
                             } label: {
@@ -85,15 +85,13 @@ struct SketchView: View {
                         .disabled(value.isEmpty)
                     }
                 }
-                
             }
             .padding()
         }
     }
 }
 
-
-struct SketchView_Previews : PreviewProvider {
+struct SketchView_Previews: PreviewProvider {
     static var previews: some View {
         SketchView(value: .constant([Line(points: [CGPoint(), CGPoint()], color: Color.black, lineWidth: 5)]), isEditing: true, fontStyle: .font1, size: .large)
             .background(CardBackground())

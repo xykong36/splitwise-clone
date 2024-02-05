@@ -1,14 +1,14 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
 struct LoadableImage: View {
     var imageMetadata: Panda
-    
+
     var body: some View {
-        AsyncImage(url: imageMetadata.imageUrl) { phase in 
+        AsyncImage(url: imageMetadata.imageUrl) { phase in
             if let image = phase.image {
                 image
                     .resizable()
@@ -17,7 +17,7 @@ struct LoadableImage: View {
                     .shadow(radius: 5)
                     .accessibility(hidden: false)
                     .accessibilityLabel(Text(imageMetadata.description))
-            }  else if phase.error != nil  {
+            } else if phase.error != nil {
                 VStack {
                     Image("pandaplaceholder")
                         .resizable()
@@ -28,7 +28,7 @@ struct LoadableImage: View {
                     Text("Please try again.")
                         .font(.title3)
                 }
-                
+
             } else {
                 ProgressView()
             }

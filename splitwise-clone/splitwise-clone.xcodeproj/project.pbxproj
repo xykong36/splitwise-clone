@@ -20,6 +20,9 @@
 		228A60C02B5F6755008C2324 /* splitwise_cloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A60BF2B5F6755008C2324 /* splitwise_cloneTests.swift */; };
 		228A60CA2B5F6755008C2324 /* splitwise_cloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A60C92B5F6755008C2324 /* splitwise_cloneUITests.swift */; };
 		228A60CC2B5F6755008C2324 /* splitwise_cloneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A60CB2B5F6755008C2324 /* splitwise_cloneUITestsLaunchTests.swift */; };
+		D17934DC2B6ED17B007C4232 /* PurchaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17934DB2B6ED17B007C4232 /* PurchaseData.swift */; };
+		D17934DE2B6ED1C1007C4232 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17934DD2B6ED1C1007C4232 /* Entry.swift */; };
+		D17934E02B6EF038007C4232 /* EntryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17934DF2B6EF038007C4232 /* EntryDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,9 @@
 		228A60C52B5F6755008C2324 /* splitwise-cloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "splitwise-cloneUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		228A60C92B5F6755008C2324 /* splitwise_cloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = splitwise_cloneUITests.swift; sourceTree = "<group>"; };
 		228A60CB2B5F6755008C2324 /* splitwise_cloneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = splitwise_cloneUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D17934DB2B6ED17B007C4232 /* PurchaseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseData.swift; sourceTree = "<group>"; };
+		D17934DD2B6ED1C1007C4232 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		D17934DF2B6EF038007C4232 /* EntryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,7 @@
 		228A60A92B5F6754008C2324 /* splitwise-clone */ = {
 			isa = PBXGroup;
 			children = (
+				D17934DA2B6ED13C007C4232 /* Data Model */,
 				228A60AA2B5F6754008C2324 /* splitwise_cloneApp.swift */,
 				228A60AC2B5F6754008C2324 /* ContentView.swift */,
 				228A60B02B5F6755008C2324 /* Assets.xcassets */,
@@ -148,6 +155,16 @@
 				228A60CB2B5F6755008C2324 /* splitwise_cloneUITestsLaunchTests.swift */,
 			);
 			path = "splitwise-cloneUITests";
+			sourceTree = "<group>";
+		};
+		D17934DA2B6ED13C007C4232 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				D17934DB2B6ED17B007C4232 /* PurchaseData.swift */,
+				D17934DD2B6ED1C1007C4232 /* Entry.swift */,
+				D17934DF2B6EF038007C4232 /* EntryDetailView.swift */,
+			);
+			path = "Data Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,7 +306,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D17934DE2B6ED1C1007C4232 /* Entry.swift in Sources */,
+				D17934DC2B6ED17B007C4232 /* PurchaseData.swift in Sources */,
 				227A63D72B6EC73A003845A1 /* LoginView.swift in Sources */,
+				D17934E02B6EF038007C4232 /* EntryDetailView.swift in Sources */,
 				228A60AD2B5F6754008C2324 /* ContentView.swift in Sources */,
 				228A60AB2B5F6754008C2324 /* splitwise_cloneApp.swift in Sources */,
 				227A63D92B6EC7D8003845A1 /* AddItemView.swift in Sources */,

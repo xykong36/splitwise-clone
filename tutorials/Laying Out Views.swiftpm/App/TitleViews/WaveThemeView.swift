@@ -1,6 +1,6 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
@@ -32,11 +32,9 @@ struct WaveThemeView: View {
     }
 }
 
-
 struct WaveThemeView_Previews: PreviewProvider {
     static var previews: some View {
         WaveThemeView()
             .modifier(EntryBannerStyle(theme: .wave))
     }
 }
-

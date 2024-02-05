@@ -1,6 +1,6 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
@@ -9,7 +9,7 @@ struct EntryList: View {
     @State private var newEntry = Entry()
     @State private var selection: Entry?
 
-    var body: some View{
+    var body: some View {
         NavigationSplitView {
             VStack(alignment: .leading) {
                 JournalAppTitle()
@@ -18,7 +18,7 @@ struct EntryList: View {
                         .tag(newEntry)
                         .modifier(ListRowStyle())
 
-                    ForEach($journalData.entries){ $entry in
+                    ForEach($journalData.entries) { $entry in
                         TitleView(entry: $entry)
                             .tag(entry)
                             .modifier(ListRowStyle())
@@ -49,13 +49,11 @@ struct EntryList: View {
     }
 }
 
-
-struct EntryList_Previews : PreviewProvider {
+struct EntryList_Previews: PreviewProvider {
     static var previews: some View {
         EntryList(journalData: JournalData())
     }
 }
-
 
 struct JournalAppTitle: View {
     var body: some View {
@@ -75,5 +73,3 @@ struct SelectEntryView: View {
             .ignoresSafeArea()
     }
 }
-
-

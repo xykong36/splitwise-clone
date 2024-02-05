@@ -1,9 +1,9 @@
 /*
-See the LICENSE.txt file for this sample’s licensing information.
+ See the LICENSE.txt file for this sample’s licensing information.
 
-Abstract:
-A view for bridging a UIPageViewController.
-*/
+ Abstract:
+ A view for bridging a UIPageViewController.
+ */
 
 import SwiftUI
 

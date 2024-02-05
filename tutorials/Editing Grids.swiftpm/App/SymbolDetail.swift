@@ -1,6 +1,6 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
@@ -11,7 +11,7 @@ struct SymbolDetail: View {
         VStack {
             Text(symbol.name)
                 .font(.system(.largeTitle, design: .rounded))
-            
+
             Image(systemName: symbol.name)
                 .resizable()
                 .scaledToFit()

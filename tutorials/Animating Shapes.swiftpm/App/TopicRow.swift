@@ -1,14 +1,14 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
 struct TopicRowView: View {
-    var title : String
+    var title: String
     var description: String
-    var systemIcon : String
-    
+    var systemIcon: String
+
     var body: some View {
         HStack {
             Image(systemName: systemIcon)
@@ -25,7 +25,7 @@ struct TopicRowView: View {
                     .foregroundColor(.gray)
             }
         }
-		.frame(minHeight: 60)
+        .frame(minHeight: 60)
     }
 }
 

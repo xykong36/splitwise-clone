@@ -1,6 +1,6 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
@@ -13,7 +13,6 @@ enum Destination: String, CaseIterable {
     case dragnDropDots
     case dancingDots
 
-    
     @ViewBuilder
     static func view(forSelection selection: Destination) -> some View {
         switch selection {
@@ -22,9 +21,9 @@ enum Destination: String, CaseIterable {
         case .simpleAnimation:
             HeartPulseView()
         case .spinningAnimation:
-           SpinningView()
+            SpinningView()
         case .explodingAnimation:
-           ExplodingView()
+            ExplodingView()
         case .rollingRainbow:
             RollinRainbowView()
         case .dragnDropDots:
@@ -35,7 +34,7 @@ enum Destination: String, CaseIterable {
     }
 }
 
-struct TopicData {
+enum TopicData {
     static var homeContent = [
         Topic(
             title: "Basic Shapes",
@@ -43,12 +42,12 @@ struct TopicData {
             systemSymbol: "square.on.circle",
             destination: .basicShapes
         ),
-		Topic(
-			title: "Basic Animation",
-			description: "See an example of a basic animation.",
-			systemSymbol: "heart",
-			destination: .simpleAnimation
-		),
+        Topic(
+            title: "Basic Animation",
+            description: "See an example of a basic animation.",
+            systemSymbol: "heart",
+            destination: .simpleAnimation
+        ),
         Topic(
             title: "Spinning Animation",
             description: "View a basic shape spinning on its x axis.",
@@ -61,7 +60,7 @@ struct TopicData {
             systemSymbol: "sparkles",
             destination: .explodingAnimation
         ),
-        
+
         Topic(
             title: "Rollin' Rainbow",
             description: "Explore an animation that makes a wave.",
@@ -79,6 +78,6 @@ struct TopicData {
             description: "Explore an advanced animation that really pops.",
             systemSymbol: "circle.grid.3x3",
             destination: .dancingDots
-        )
+        ),
     ]
 }

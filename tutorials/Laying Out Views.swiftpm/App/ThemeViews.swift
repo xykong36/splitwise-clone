@@ -1,6 +1,6 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
@@ -38,7 +38,7 @@ struct BackgroundIcon: View {
         case .ray:
             Image("RayIcon")
                 .resizable()
-            
+
         case .wave:
             Image("WaveIcon")
                 .resizable()
@@ -48,25 +48,25 @@ struct BackgroundIcon: View {
 
 struct EntryBackground: View {
     var forTheme: JournalTheme
-        var body: some View {
-            switch forTheme {
-            case .line:
-                Image("LineBackground")
-                    .resizable()
-            case .curve:
-                Image("CurveBackground")
-                    .resizable()
-            case .dot:
-                Image("DotBackground")
-                    .resizable()
-            case .ray:
-                Image("RayBackground")
-                    .resizable()
-            case .wave:
-                Image("WaveBackground")
-                    .resizable()
-            }
+    var body: some View {
+        switch forTheme {
+        case .line:
+            Image("LineBackground")
+                .resizable()
+        case .curve:
+            Image("CurveBackground")
+                .resizable()
+        case .dot:
+            Image("DotBackground")
+                .resizable()
+        case .ray:
+            Image("RayBackground")
+                .resizable()
+        case .wave:
+            Image("WaveBackground")
+                .resizable()
         }
+    }
 }
 
 struct CardBackground: View {
@@ -76,7 +76,7 @@ struct CardBackground: View {
             .foregroundColor(getCardBackground(forTheme: theme))
             .shadow(color: Color.shadow, radius: 4)
     }
-    
+
     func getCardBackground(forTheme: JournalTheme) -> Color {
         switch forTheme {
         case .line:
@@ -103,13 +103,13 @@ struct CardStyle: ViewModifier {
 }
 
 extension JournalFont {
-    func uiFont( _ size: CGFloat) -> Font{
+    func uiFont(_ size: CGFloat) -> Font {
         switch self {
         case .font1:
-            return Font.system(size:size,weight: .medium, design: .rounded)
+            return Font.system(size: size, weight: .medium, design: .rounded)
         case .font2:
             return Font.custom(rawValue, size: size)
-           
+
         case .font3:
             return Font.custom(rawValue, size: size)
         }

@@ -1,6 +1,6 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
@@ -11,7 +11,7 @@ struct StoryView: View {
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .padding()
-            
+
             ScrollView {
                 Text(information.story)
                     .font(.body)

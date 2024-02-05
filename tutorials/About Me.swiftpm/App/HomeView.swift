@@ -1,11 +1,10 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
 struct HomeView: View {
-    
     var body: some View {
         VStack {
             Text("My first ios app")
@@ -23,7 +22,6 @@ struct HomeView: View {
                 .font(.title)
         }
     }
-    
 }
 
 struct HomeView_Previews: PreviewProvider {

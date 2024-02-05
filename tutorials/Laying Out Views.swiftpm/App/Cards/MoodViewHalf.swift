@@ -1,6 +1,6 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
@@ -10,14 +10,14 @@ struct MoodViewHalf: View {
     var fontStyle: JournalFont
     private let emojis = ["😢", "😴", "😁", "😡", "😐"]
     @State private var emojiIndex = 2
-    
+
     var body: some View {
         VStack(alignment: .leading) {
             Text("Mood")
                 .foregroundColor(.darkBrown)
                 .font(fontStyle.uiFont(15))
                 .frame(maxWidth: .infinity, alignment: .center)
-            
+
             HStack {
                 if isEditing {
                     Button {
@@ -28,13 +28,13 @@ struct MoodViewHalf: View {
                             .foregroundColor(.darkBrown)
                             .font(.system(size: 17))
                     }
-                    .disabled(emojiIndex-1 < 0)
-                    .opacity(emojiIndex-1 < 0 ? 0.5 : 1)
+                    .disabled(emojiIndex - 1 < 0)
+                    .opacity(emojiIndex - 1 < 0 ? 0.5 : 1)
                 }
-                
+
                 Text(value)
                     .font(.system(size: isEditing ? 40 : 60))
-                
+
                 if isEditing {
                     Button {
                         emojiIndex += 1
@@ -43,10 +43,9 @@ struct MoodViewHalf: View {
                         Image(systemName: "arrow.right")
                             .foregroundColor(.darkBrown)
                             .font(.system(size: 17))
-
                     }
-                    .disabled(emojiIndex+1 > 4)
-                    .opacity(emojiIndex+1 > 4 ? 0.5 : 1)
+                    .disabled(emojiIndex + 1 > 4)
+                    .opacity(emojiIndex + 1 > 4 ? 0.5 : 1)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -56,7 +55,7 @@ struct MoodViewHalf: View {
     }
 }
 
-struct MoodViewHalf_Previews : PreviewProvider {
+struct MoodViewHalf_Previews: PreviewProvider {
     static var previews: some View {
         MoodViewHalfPreview()
     }

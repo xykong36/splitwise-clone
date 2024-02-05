@@ -1,19 +1,19 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
 struct RemoveCardButton: View {
     @Binding var entryCopy: Entry
     var card: Card
-    var isEditing : Bool
+    var isEditing: Bool
     var row: Int
     var index: Int
-    var action: () -> Void = { }
-    
+    var action: () -> Void = {}
+
     var body: some View {
-        Button() {
+        Button {
             entryCopy.removeCard(cards: entryCopy.entryRows[row].cards, row: row, index: index)
         } label: {
             Image(systemName: "xmark")
@@ -27,11 +27,11 @@ struct RemoveCardButton: View {
 
 struct FontButton: View {
     @Binding var entry: Entry
-    var font : JournalFont
-    var action: () -> Void = { }
+    var font: JournalFont
+    var action: () -> Void = {}
 
     var body: some View {
-        Button() {
+        Button {
             entry.font = font
         } label: {
             HStack {
@@ -51,19 +51,19 @@ struct EditingButton: View {
     @Binding var entry: Entry
     @Binding var entryCopy: Entry
     @Binding var isNew: Bool
-    @Binding var isEditing : Bool
-    var action: () -> Void = { }
+    @Binding var isEditing: Bool
+    var action: () -> Void = {}
     var isAdded: Bool {
-        entries.filter({ $0.id == entryCopy.id }).first != nil
+        entries.filter { $0.id == entryCopy.id }.first != nil
     }
-    
+
     var body: some View {
         Button {
             if isNew && isEditing {
                 if !isAdded {
                     entries.append(entryCopy)
                 } else {
-                    if let index = entries.firstIndex(where: { $0.id == entryCopy.id }){
+                    if let index = entries.firstIndex(where: { $0.id == entryCopy.id }) {
                         entries[index].update(from: entryCopy)
                     }
                 }
@@ -98,26 +98,26 @@ struct EditingButton: View {
 struct EntryDetail: View {
     @Binding var entries: [Entry]
     @Binding var entry: Entry
-    
+
     @State private var isNew: Bool
-    @State private var isEditing: Bool 
+    @State private var isEditing: Bool
     @State private var entryCopy = Entry()
-    
+
     init(entries: Binding<[Entry]>, entry: Binding<Entry>, isNew: Bool) {
-        self._entries = entries
-        self._entry = entry
-        self._isNew = State(initialValue: isNew)
-        self._isEditing = State(initialValue: isNew ? true : false)
+        _entries = entries
+        _entry = entry
+        _isNew = State(initialValue: isNew)
+        _isEditing = State(initialValue: isNew ? true : false)
     }
-    
+
     var body: some View {
         EntryView(entry: isNew ? $entryCopy : $entry, entryCopy: $entryCopy, isEditing: $isEditing)
-            .navigationBarBackButtonHidden(isNew ? false: isEditing)
+            .navigationBarBackButtonHidden(isNew ? false : isEditing)
             .toolbar {
                 ToolbarItem {
                     EditingButton(entries: $entries, entry: $entry, entryCopy: $entryCopy, isNew: $isNew, isEditing: $isEditing)
                 }
-                ToolbarItem (placement: .navigationBarLeading) {
+                ToolbarItem(placement: .navigationBarLeading) {
                     if !isNew && isEditing {
                         Button("Cancel") {
                             withAnimation(.spring()) {
@@ -132,11 +132,11 @@ struct EntryDetail: View {
 
 struct SettingsButton: View {
     @Binding var showSettings: Bool
-    var currentEntry: Entry = Entry()
-    var action: () -> Void = { }
+    var currentEntry: Entry = .init()
+    var action: () -> Void = {}
 
     var body: some View {
-        Button() {
+        Button {
             showSettings.toggle()
             action()
         } label: {
@@ -147,9 +147,9 @@ struct SettingsButton: View {
 
 struct SettingsButtonView: View {
     var theme: JournalTheme
-    
+
     var body: some View {
-        VStack (spacing: 0) {
+        VStack(spacing: 0) {
             BackgroundIcon(forTheme: theme)
                 .frame(width: 30, height: 30)
                 .clipShape(Circle())

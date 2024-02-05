@@ -8,16 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var purchaseData = PurchaseData()
+
     var body: some View {
         TabView {
-            AddItemView()
-                .tabItem {
-                    Label("Add", systemImage: "book")
-                }
-            
             LoginView()
                 .tabItem {
                     Label("Login", systemImage: "flag")
+                }
+            AddItemView(purchaseData: purchaseData)
+                .tabItem {
+                    Label("Activity", systemImage: "book")
                 }
         }
     }

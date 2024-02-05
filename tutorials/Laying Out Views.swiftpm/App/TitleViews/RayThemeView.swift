@@ -1,39 +1,37 @@
 /*
-See the License.txt file for this sample’s licensing information.
-*/
+ See the License.txt file for this sample’s licensing information.
+ */
 
 import SwiftUI
 
 struct RayThemeView: View {
-    private var lineColor = ["ray-yellow","ray-peach","ray-orange","ray-mauve"]
+    private var lineColor = ["ray-yellow", "ray-peach", "ray-orange", "ray-mauve"]
     var body: some View {
         HStack {
             ZStack {
-                ForEach(0..<lineColor.count,  id: \.self) { index in
+                ForEach(0 ..< lineColor.count, id: \.self) { index in
                     AngledLine()
                         .rotation(Angle(degrees: 15))
                         .foregroundColor(Color(lineColor[index]))
                         .frame(width: 15, height: 150)
-                        .offset(x: CGFloat(8*index-31))
+                        .offset(x: CGFloat(8 * index - 31))
                 }
             }
             Spacer()
             ZStack {
-                ForEach(0..<lineColor.count,  id: \.self) { index in
+                ForEach(0 ..< lineColor.count, id: \.self) { index in
                     AngledLine()
                         .rotation(Angle(degrees: -15))
                         .foregroundColor(Color(lineColor[index]))
                         .frame(width: 15, height: 150)
-                        .offset(x: CGFloat(8*index)+2)
+                        .offset(x: CGFloat(8 * index) + 2)
                 }
             }
         }
     }
 }
 
-
-struct AngledLine : Shape {
-    
+struct AngledLine: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
         path.move(to: CGPoint(x: rect.minX, y: rect.maxY))

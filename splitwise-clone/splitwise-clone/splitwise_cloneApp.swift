@@ -20,16 +20,12 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 }
 
 @main
-struct SplitwiseCloneApp: App {
-  // register app delegate for Firebase setup
-  @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-
-
-  var body: some Scene {
-    WindowGroup {
-      NavigationView {
-        ContentView()
-      }
+struct AboutMeApp: App {
+    @StateObject var purchaseData = PurchaseData()
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
     }
   }
 }
